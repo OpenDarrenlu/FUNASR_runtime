@@ -39,8 +39,9 @@ IF(WIN32)
                 ${PROJECT_SOURCE_DIR}/third_party/glog/src/glog/stl_logging.h 
                 ${PROJECT_SOURCE_DIR}/third_party/glog/src/glog/vlog_is_on.h)
 ELSE()
-    link_directories(${ONNXRUNTIME_DIR}/lib)
+    link_directories(/root/onnxruntime/build/Linux/Release)
     link_directories(${FFMPEG_DIR}/lib)
+
 endif()
 include_directories(${CMAKE_SOURCE_DIR}/src)
 include_directories(${PROJECT_SOURCE_DIR}/third_party/kaldi-native-fbank)

@@ -1,0 +1,4102 @@
+.
+├── CMakeLists.txt
+├── CMakeSettings.json
+├── bin
+│   ├── CMakeLists.txt
+│   ├── funasr-onnx-2pass-rtf.cpp
+│   ├── funasr-onnx-2pass.cpp
+│   ├── funasr-onnx-offline-punc.cpp
+│   ├── funasr-onnx-offline-rtf.cpp
+│   ├── funasr-onnx-offline-vad.cpp
+│   ├── funasr-onnx-offline.cpp
+│   ├── funasr-onnx-online-asr.cpp
+│   ├── funasr-onnx-online-punc.cpp
+│   ├── funasr-onnx-online-rtf.cpp
+│   └── funasr-onnx-online-vad.cpp
+├── build
+│   ├── CMakeCache.txt
+│   ├── CMakeFiles
+│   │   ├── 3.22.1
+│   │   │   ├── CMakeCCompiler.cmake
+│   │   │   ├── CMakeCXXCompiler.cmake
+│   │   │   ├── CMakeDetermineCompilerABI_C.bin
+│   │   │   ├── CMakeDetermineCompilerABI_CXX.bin
+│   │   │   ├── CMakeSystem.cmake
+│   │   │   ├── CompilerIdC
+│   │   │   │   ├── CMakeCCompilerId.c
+│   │   │   │   ├── a.out
+│   │   │   │   └── tmp
+│   │   │   └── CompilerIdCXX
+│   │   │       ├── CMakeCXXCompilerId.cpp
+│   │   │       ├── a.out
+│   │   │       └── tmp
+│   │   ├── CMakeDirectoryInformation.cmake
+│   │   ├── CMakeError.log
+│   │   ├── CMakeOutput.log
+│   │   ├── CMakeRuleHashes.txt
+│   │   ├── CMakeTmp
+│   │   ├── CheckTypeSize
+│   │   │   ├── HAVE_MODE_T.bin
+│   │   │   ├── HAVE_MODE_T.cpp
+│   │   │   ├── HAVE_SSIZE_T.bin
+│   │   │   ├── HAVE_SSIZE_T.cpp
+│   │   │   ├── uint32_t.bin
+│   │   │   └── uint32_t.cpp
+│   │   ├── Makefile.cmake
+│   │   ├── Makefile2
+│   │   ├── TargetDirectories.txt
+│   │   ├── cmake.check_cache
+│   │   └── progress.marks
+│   ├── CPackConfig.cmake
+│   ├── CPackSourceConfig.cmake
+│   ├── Makefile
+│   ├── _deps
+│   │   ├── json-build
+│   │   │   ├── CMakeFiles
+│   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   └── progress.marks
+│   │   │   ├── Makefile
+│   │   │   ├── cmake_install.cmake
+│   │   │   ├── nlohmann_json.pc
+│   │   │   ├── nlohmann_jsonConfig.cmake
+│   │   │   └── nlohmann_jsonConfigVersion.cmake
+│   │   └── json-subbuild
+│   │       ├── CMakeCache.txt
+│   │       ├── CMakeFiles
+│   │       │   ├── 3.22.1
+│   │       │   │   └── CMakeSystem.cmake
+│   │       │   ├── CMakeDirectoryInformation.cmake
+│   │       │   ├── CMakeOutput.log
+│   │       │   ├── CMakeRuleHashes.txt
+│   │       │   ├── Makefile.cmake
+│   │       │   ├── Makefile2
+│   │       │   ├── TargetDirectories.txt
+│   │       │   ├── cmake.check_cache
+│   │       │   ├── json-populate-complete
+│   │       │   ├── json-populate.dir
+│   │       │   │   ├── DependInfo.cmake
+│   │       │   │   ├── Labels.json
+│   │       │   │   ├── Labels.txt
+│   │       │   │   ├── build.make
+│   │       │   │   ├── cmake_clean.cmake
+│   │       │   │   ├── compiler_depend.make
+│   │       │   │   ├── compiler_depend.ts
+│   │       │   │   └── progress.make
+│   │       │   └── progress.marks
+│   │       ├── CMakeLists.txt
+│   │       ├── Makefile
+│   │       ├── cmake_install.cmake
+│   │       └── json-populate-prefix
+│   │           ├── src
+│   │           │   ├── json-populate-stamp
+│   │           │   │   ├── download-json-populate.cmake
+│   │           │   │   ├── extract-json-populate.cmake
+│   │           │   │   ├── json-populate-build
+│   │           │   │   ├── json-populate-configure
+│   │           │   │   ├── json-populate-done
+│   │           │   │   ├── json-populate-download
+│   │           │   │   ├── json-populate-install
+│   │           │   │   ├── json-populate-mkdir
+│   │           │   │   ├── json-populate-patch
+│   │           │   │   ├── json-populate-test
+│   │           │   │   ├── json-populate-update
+│   │           │   │   ├── json-populate-urlinfo.txt
+│   │           │   │   └── verify-json-populate.cmake
+│   │           │   └── v3.11.2.tar.gz
+│   │           └── tmp
+│   │               ├── json-populate-cfgcmd.txt
+│   │               └── json-populate-cfgcmd.txt.in
+│   ├── bin
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── funasr-onnx-2pass-rtf.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── funasr-onnx-2pass-rtf.cpp.o
+│   │   │   │   ├── funasr-onnx-2pass-rtf.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   └── progress.make
+│   │   │   ├── funasr-onnx-2pass.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── funasr-onnx-2pass.cpp.o
+│   │   │   │   ├── funasr-onnx-2pass.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   └── progress.make
+│   │   │   ├── funasr-onnx-offline-punc.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── funasr-onnx-offline-punc.cpp.o
+│   │   │   │   ├── funasr-onnx-offline-punc.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   └── progress.make
+│   │   │   ├── funasr-onnx-offline-rtf.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── funasr-onnx-offline-rtf.cpp.o
+│   │   │   │   ├── funasr-onnx-offline-rtf.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   └── progress.make
+│   │   │   ├── funasr-onnx-offline-vad.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── funasr-onnx-offline-vad.cpp.o
+│   │   │   │   ├── funasr-onnx-offline-vad.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   └── progress.make
+│   │   │   ├── funasr-onnx-offline.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── funasr-onnx-offline.cpp.o
+│   │   │   │   ├── funasr-onnx-offline.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   └── progress.make
+│   │   │   ├── funasr-onnx-online-asr.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── funasr-onnx-online-asr.cpp.o
+│   │   │   │   ├── funasr-onnx-online-asr.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   └── progress.make
+│   │   │   ├── funasr-onnx-online-punc.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── funasr-onnx-online-punc.cpp.o
+│   │   │   │   ├── funasr-onnx-online-punc.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   └── progress.make
+│   │   │   ├── funasr-onnx-online-rtf.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── funasr-onnx-online-rtf.cpp.o
+│   │   │   │   ├── funasr-onnx-online-rtf.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   └── progress.make
+│   │   │   ├── funasr-onnx-online-vad.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── funasr-onnx-online-vad.cpp.o
+│   │   │   │   ├── funasr-onnx-online-vad.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   └── progress.make
+│   │   │   └── progress.marks
+│   │   ├── Makefile
+│   │   ├── arpa2fst
+│   │   ├── cmake_install.cmake
+│   │   ├── fstaddselfloops
+│   │   ├── fstarcsort
+│   │   ├── fstclosure
+│   │   ├── fstcompile
+│   │   ├── fstcompose
+│   │   ├── fstconcat
+│   │   ├── fstconnect
+│   │   ├── fstconvert
+│   │   ├── fstdeterminize
+│   │   ├── fstdeterminizestar
+│   │   ├── fstdifference
+│   │   ├── fstdisambiguate
+│   │   ├── fstdraw
+│   │   ├── fstencode
+│   │   ├── fstepsnormalize
+│   │   ├── fstequal
+│   │   ├── fstequivalent
+│   │   ├── fstinfo
+│   │   ├── fstintersect
+│   │   ├── fstinvert
+│   │   ├── fstisomorphic
+│   │   ├── fstisstochastic
+│   │   ├── fstmap
+│   │   ├── fstminimize
+│   │   ├── fstminimizeencoded
+│   │   ├── fstprint
+│   │   ├── fstproject
+│   │   ├── fstprune
+│   │   ├── fstpush
+│   │   ├── fstrandgen
+│   │   ├── fstrelabel
+│   │   ├── fstreplace
+│   │   ├── fstreverse
+│   │   ├── fstreweight
+│   │   ├── fstrmepsilon
+│   │   ├── fstshortestdistance
+│   │   ├── fstshortestpath
+│   │   ├── fstsymbols
+│   │   ├── fstsynchronize
+│   │   ├── fsttablecompose
+│   │   ├── fsttopsort
+│   │   ├── fstunion
+│   │   ├── funasr-onnx-2pass
+│   │   ├── funasr-onnx-2pass-rtf
+│   │   ├── funasr-onnx-offline
+│   │   ├── funasr-onnx-offline-punc
+│   │   ├── funasr-onnx-offline-rtf
+│   │   ├── funasr-onnx-offline-vad
+│   │   ├── funasr-onnx-online-asr
+│   │   ├── funasr-onnx-online-punc
+│   │   ├── funasr-onnx-online-rtf
+│   │   └── funasr-onnx-online-vad
+│   ├── cmake_install.cmake
+│   ├── src
+│   │   ├── CMakeFiles
+│   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   ├── funasr.dir
+│   │   │   │   ├── DependInfo.cmake
+│   │   │   │   ├── alignedmem.cpp.o
+│   │   │   │   ├── alignedmem.cpp.o.d
+│   │   │   │   ├── audio.cpp.o
+│   │   │   │   ├── audio.cpp.o.d
+│   │   │   │   ├── bias-lm.cpp.o
+│   │   │   │   ├── bias-lm.cpp.o.d
+│   │   │   │   ├── build.make
+│   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   ├── compiler_depend.internal
+│   │   │   │   ├── compiler_depend.make
+│   │   │   │   ├── compiler_depend.ts
+│   │   │   │   ├── ct-transformer-online.cpp.o
+│   │   │   │   ├── ct-transformer-online.cpp.o.d
+│   │   │   │   ├── ct-transformer.cpp.o
+│   │   │   │   ├── ct-transformer.cpp.o.d
+│   │   │   │   ├── depend.make
+│   │   │   │   ├── encode_converter.cpp.o
+│   │   │   │   ├── encode_converter.cpp.o.d
+│   │   │   │   ├── flags.make
+│   │   │   │   ├── fsmn-vad-online.cpp.o
+│   │   │   │   ├── fsmn-vad-online.cpp.o.d
+│   │   │   │   ├── fsmn-vad.cpp.o
+│   │   │   │   ├── fsmn-vad.cpp.o.d
+│   │   │   │   ├── funasrruntime.cpp.o
+│   │   │   │   ├── funasrruntime.cpp.o.d
+│   │   │   │   ├── itn-processor.cpp.o
+│   │   │   │   ├── itn-processor.cpp.o.d
+│   │   │   │   ├── itn-token-parser.cpp.o
+│   │   │   │   ├── itn-token-parser.cpp.o.d
+│   │   │   │   ├── link.txt
+│   │   │   │   ├── model.cpp.o
+│   │   │   │   ├── model.cpp.o.d
+│   │   │   │   ├── offline-stream.cpp.o
+│   │   │   │   ├── offline-stream.cpp.o.d
+│   │   │   │   ├── paraformer-online.cpp.o
+│   │   │   │   ├── paraformer-online.cpp.o.d
+│   │   │   │   ├── paraformer.cpp.o
+│   │   │   │   ├── paraformer.cpp.o.d
+│   │   │   │   ├── phone-set.cpp.o
+│   │   │   │   ├── phone-set.cpp.o.d
+│   │   │   │   ├── progress.make
+│   │   │   │   ├── punc-model.cpp.o
+│   │   │   │   ├── punc-model.cpp.o.d
+│   │   │   │   ├── resample.cpp.o
+│   │   │   │   ├── resample.cpp.o.d
+│   │   │   │   ├── seg_dict.cpp.o
+│   │   │   │   ├── seg_dict.cpp.o.d
+│   │   │   │   ├── sensevoice-small.cpp.o
+│   │   │   │   ├── sensevoice-small.cpp.o.d
+│   │   │   │   ├── tokenizer.cpp.o
+│   │   │   │   ├── tokenizer.cpp.o.d
+│   │   │   │   ├── tpass-online-stream.cpp.o
+│   │   │   │   ├── tpass-online-stream.cpp.o.d
+│   │   │   │   ├── tpass-stream.cpp.o
+│   │   │   │   ├── tpass-stream.cpp.o.d
+│   │   │   │   ├── utf8-string.cpp.o
+│   │   │   │   ├── utf8-string.cpp.o.d
+│   │   │   │   ├── util.cpp.o
+│   │   │   │   ├── util.cpp.o.d
+│   │   │   │   ├── vad-model.cpp.o
+│   │   │   │   ├── vad-model.cpp.o.d
+│   │   │   │   ├── vocab.cpp.o
+│   │   │   │   ├── vocab.cpp.o.d
+│   │   │   │   ├── wfst-decoder.cpp.o
+│   │   │   │   └── wfst-decoder.cpp.o.d
+│   │   │   └── progress.marks
+│   │   ├── Makefile
+│   │   ├── cmake_install.cmake
+│   │   └── libfunasr.so
+│   ├── third_party
+│   │   ├── gflags
+│   │   │   ├── CMakeFiles
+│   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   ├── gflags_nothreads_shared.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   ├── progress.make
+│   │   │   │   │   └── src
+│   │   │   │   │       ├── gflags.cc.o
+│   │   │   │   │       ├── gflags.cc.o.d
+│   │   │   │   │       ├── gflags_completions.cc.o
+│   │   │   │   │       ├── gflags_completions.cc.o.d
+│   │   │   │   │       ├── gflags_reporting.cc.o
+│   │   │   │   │       └── gflags_reporting.cc.o.d
+│   │   │   │   ├── gflags_nothreads_static.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── cmake_clean_target.cmake
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   ├── progress.make
+│   │   │   │   │   └── src
+│   │   │   │   │       ├── gflags.cc.o
+│   │   │   │   │       ├── gflags.cc.o.d
+│   │   │   │   │       ├── gflags_completions.cc.o
+│   │   │   │   │       ├── gflags_completions.cc.o.d
+│   │   │   │   │       ├── gflags_reporting.cc.o
+│   │   │   │   │       └── gflags_reporting.cc.o.d
+│   │   │   │   └── progress.marks
+│   │   │   ├── Makefile
+│   │   │   ├── cmake_install.cmake
+│   │   │   ├── gflags-config-install.cmake
+│   │   │   ├── gflags-config-version.cmake
+│   │   │   ├── gflags-config.cmake
+│   │   │   ├── gflags-nonamespace-targets.cmake
+│   │   │   ├── gflags-targets.cmake
+│   │   │   ├── gflags.pc
+│   │   │   ├── include
+│   │   │   │   └── gflags
+│   │   │   │       ├── defines.h
+│   │   │   │       ├── gflags.h
+│   │   │   │       ├── gflags_completions.h
+│   │   │   │       └── gflags_declare.h
+│   │   │   ├── libgflags_nothreads.a
+│   │   │   ├── libgflags_nothreads.so -> libgflags_nothreads.so.2.2
+│   │   │   ├── libgflags_nothreads.so.2.2 -> libgflags_nothreads.so.2.2.2
+│   │   │   └── libgflags_nothreads.so.2.2.2
+│   │   ├── glog
+│   │   │   ├── CMakeFiles
+│   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   ├── CMakeTmp
+│   │   │   │   ├── Export
+│   │   │   │   │   └── lib
+│   │   │   │   │       └── cmake
+│   │   │   │   │           └── glog
+│   │   │   │   │               ├── glog-targets-release.cmake
+│   │   │   │   │               └── glog-targets.cmake
+│   │   │   │   ├── glog.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── glog_internal.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── progress.make
+│   │   │   │   │   └── src
+│   │   │   │   │       ├── demangle.cc.o
+│   │   │   │   │       ├── demangle.cc.o.d
+│   │   │   │   │       ├── logging.cc.o
+│   │   │   │   │       ├── logging.cc.o.d
+│   │   │   │   │       ├── raw_logging.cc.o
+│   │   │   │   │       ├── raw_logging.cc.o.d
+│   │   │   │   │       ├── signalhandler.cc.o
+│   │   │   │   │       ├── signalhandler.cc.o.d
+│   │   │   │   │       ├── symbolize.cc.o
+│   │   │   │   │       ├── symbolize.cc.o.d
+│   │   │   │   │       ├── utilities.cc.o
+│   │   │   │   │       ├── utilities.cc.o.d
+│   │   │   │   │       ├── vlog_is_on.cc.o
+│   │   │   │   │       └── vlog_is_on.cc.o.d
+│   │   │   │   └── progress.marks
+│   │   │   ├── Makefile
+│   │   │   ├── cmake_install.cmake
+│   │   │   ├── config.h
+│   │   │   ├── glog
+│   │   │   │   ├── export.h
+│   │   │   │   ├── logging.h
+│   │   │   │   ├── raw_logging.h
+│   │   │   │   ├── stl_logging.h
+│   │   │   │   └── vlog_is_on.h
+│   │   │   ├── glog-config-version.cmake
+│   │   │   ├── glog-config.cmake
+│   │   │   ├── glog-modules.cmake
+│   │   │   ├── glog-targets.cmake
+│   │   │   ├── libglog.pc
+│   │   │   ├── libglog.so -> libglog.so.1
+│   │   │   ├── libglog.so.0.7.0
+│   │   │   └── libglog.so.1 -> libglog.so.0.7.0
+│   │   ├── kaldi
+│   │   │   ├── CMakeFiles
+│   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   ├── arpa2fst.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   ├── lm
+│   │   │   │   │   │   ├── arpa-file-parser.cc.o
+│   │   │   │   │   │   ├── arpa-file-parser.cc.o.d
+│   │   │   │   │   │   ├── arpa-lm-compiler.cc.o
+│   │   │   │   │   │   └── arpa-lm-compiler.cc.o.d
+│   │   │   │   │   ├── lmbin
+│   │   │   │   │   │   ├── arpa2fst.cc.o
+│   │   │   │   │   │   └── arpa2fst.cc.o.d
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── fstaddselfloops.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── fstbin
+│   │   │   │   │   │   ├── fstaddselfloops.cc.o
+│   │   │   │   │   │   └── fstaddselfloops.cc.o.d
+│   │   │   │   │   ├── fstext
+│   │   │   │   │   │   ├── kaldi-fst-io.cc.o
+│   │   │   │   │   │   └── kaldi-fst-io.cc.o.d
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── fstdeterminizestar.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── fstbin
+│   │   │   │   │   │   ├── fstdeterminizestar.cc.o
+│   │   │   │   │   │   └── fstdeterminizestar.cc.o.d
+│   │   │   │   │   ├── fstext
+│   │   │   │   │   │   ├── kaldi-fst-io.cc.o
+│   │   │   │   │   │   └── kaldi-fst-io.cc.o.d
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── fstisstochastic.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── fstbin
+│   │   │   │   │   │   ├── fstisstochastic.cc.o
+│   │   │   │   │   │   └── fstisstochastic.cc.o.d
+│   │   │   │   │   ├── fstext
+│   │   │   │   │   │   ├── kaldi-fst-io.cc.o
+│   │   │   │   │   │   └── kaldi-fst-io.cc.o.d
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── fstminimizeencoded.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── fstbin
+│   │   │   │   │   │   ├── fstminimizeencoded.cc.o
+│   │   │   │   │   │   └── fstminimizeencoded.cc.o.d
+│   │   │   │   │   ├── fstext
+│   │   │   │   │   │   ├── kaldi-fst-io.cc.o
+│   │   │   │   │   │   └── kaldi-fst-io.cc.o.d
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── fsttablecompose.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── fstbin
+│   │   │   │   │   │   ├── fsttablecompose.cc.o
+│   │   │   │   │   │   └── fsttablecompose.cc.o.d
+│   │   │   │   │   ├── fstext
+│   │   │   │   │   │   ├── kaldi-fst-io.cc.o
+│   │   │   │   │   │   └── kaldi-fst-io.cc.o.d
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── kaldi-decoder.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── cmake_clean_target.cmake
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── decoder
+│   │   │   │   │   │   ├── lattice-faster-decoder.cc.o
+│   │   │   │   │   │   ├── lattice-faster-decoder.cc.o.d
+│   │   │   │   │   │   ├── lattice-faster-online-decoder.cc.o
+│   │   │   │   │   │   └── lattice-faster-online-decoder.cc.o.d
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── lat
+│   │   │   │   │   │   ├── determinize-lattice-pruned.cc.o
+│   │   │   │   │   │   ├── determinize-lattice-pruned.cc.o.d
+│   │   │   │   │   │   ├── lattice-functions.cc.o
+│   │   │   │   │   │   └── lattice-functions.cc.o.d
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── kaldi-util.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── base
+│   │   │   │   │   │   ├── kaldi-error.cc.o
+│   │   │   │   │   │   ├── kaldi-error.cc.o.d
+│   │   │   │   │   │   ├── kaldi-math.cc.o
+│   │   │   │   │   │   └── kaldi-math.cc.o.d
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── cmake_clean_target.cmake
+│   │   │   │   │   ├── compiler_depend.internal
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   ├── depend.make
+│   │   │   │   │   ├── flags.make
+│   │   │   │   │   ├── link.txt
+│   │   │   │   │   ├── progress.make
+│   │   │   │   │   └── util
+│   │   │   │   │       ├── kaldi-io.cc.o
+│   │   │   │   │       ├── kaldi-io.cc.o.d
+│   │   │   │   │       ├── parse-options.cc.o
+│   │   │   │   │       ├── parse-options.cc.o.d
+│   │   │   │   │       ├── simple-io-funcs.cc.o
+│   │   │   │   │       ├── simple-io-funcs.cc.o.d
+│   │   │   │   │       ├── text-utils.cc.o
+│   │   │   │   │       └── text-utils.cc.o.d
+│   │   │   │   └── progress.marks
+│   │   │   ├── Makefile
+│   │   │   ├── cmake_install.cmake
+│   │   │   ├── libkaldi-decoder.a
+│   │   │   └── libkaldi-util.a
+│   │   ├── kaldi-native-fbank
+│   │   │   └── kaldi-native-fbank
+│   │   │       └── csrc
+│   │   │           ├── CMakeFiles
+│   │   │           │   ├── CMakeDirectoryInformation.cmake
+│   │   │           │   ├── csrc.dir
+│   │   │           │   │   ├── DependInfo.cmake
+│   │   │           │   │   ├── build.make
+│   │   │           │   │   ├── cmake_clean.cmake
+│   │   │           │   │   ├── cmake_clean_target.cmake
+│   │   │           │   │   ├── compiler_depend.internal
+│   │   │           │   │   ├── compiler_depend.make
+│   │   │           │   │   ├── compiler_depend.ts
+│   │   │           │   │   ├── depend.make
+│   │   │           │   │   ├── feature-fbank.cc.o
+│   │   │           │   │   ├── feature-fbank.cc.o.d
+│   │   │           │   │   ├── feature-functions.cc.o
+│   │   │           │   │   ├── feature-functions.cc.o.d
+│   │   │           │   │   ├── feature-window.cc.o
+│   │   │           │   │   ├── feature-window.cc.o.d
+│   │   │           │   │   ├── fftsg.c.o
+│   │   │           │   │   ├── fftsg.c.o.d
+│   │   │           │   │   ├── flags.make
+│   │   │           │   │   ├── link.txt
+│   │   │           │   │   ├── mel-computations.cc.o
+│   │   │           │   │   ├── mel-computations.cc.o.d
+│   │   │           │   │   ├── online-feature.cc.o
+│   │   │           │   │   ├── online-feature.cc.o.d
+│   │   │           │   │   ├── progress.make
+│   │   │           │   │   ├── rfft.cc.o
+│   │   │           │   │   └── rfft.cc.o.d
+│   │   │           │   └── progress.marks
+│   │   │           ├── Makefile
+│   │   │           ├── cmake_install.cmake
+│   │   │           └── libcsrc.a
+│   │   ├── openfst
+│   │   │   ├── CMakeFiles
+│   │   │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │   │   ├── Continuous.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ContinuousBuild.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ContinuousConfigure.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ContinuousCoverage.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ContinuousMemCheck.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ContinuousStart.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ContinuousSubmit.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ContinuousTest.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ContinuousUpdate.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── Experimental.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ExperimentalBuild.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ExperimentalConfigure.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ExperimentalCoverage.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ExperimentalMemCheck.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ExperimentalStart.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ExperimentalSubmit.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ExperimentalTest.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── ExperimentalUpdate.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── Nightly.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── NightlyBuild.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── NightlyConfigure.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── NightlyCoverage.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── NightlyMemCheck.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── NightlyMemoryCheck.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── NightlyStart.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── NightlySubmit.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── NightlyTest.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   ├── NightlyUpdate.dir
+│   │   │   │   │   ├── DependInfo.cmake
+│   │   │   │   │   ├── build.make
+│   │   │   │   │   ├── cmake_clean.cmake
+│   │   │   │   │   ├── compiler_depend.make
+│   │   │   │   │   ├── compiler_depend.ts
+│   │   │   │   │   └── progress.make
+│   │   │   │   └── progress.marks
+│   │   │   ├── CTestTestfile.cmake
+│   │   │   ├── DartConfiguration.tcl
+│   │   │   ├── Makefile
+│   │   │   ├── Testing
+│   │   │   │   └── Temporary
+│   │   │   ├── cmake_install.cmake
+│   │   │   └── src
+│   │   │       ├── CMakeFiles
+│   │   │       │   ├── CMakeDirectoryInformation.cmake
+│   │   │       │   └── progress.marks
+│   │   │       ├── CTestTestfile.cmake
+│   │   │       ├── Makefile
+│   │   │       ├── bin
+│   │   │       │   ├── CMakeFiles
+│   │   │       │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │       │   │   ├── fstarcsort.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstarcsort-main.cc.o
+│   │   │       │   │   │   ├── fstarcsort-main.cc.o.d
+│   │   │       │   │   │   ├── fstarcsort.cc.o
+│   │   │       │   │   │   ├── fstarcsort.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstclosure.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstclosure-main.cc.o
+│   │   │       │   │   │   ├── fstclosure-main.cc.o.d
+│   │   │       │   │   │   ├── fstclosure.cc.o
+│   │   │       │   │   │   ├── fstclosure.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstcompile.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstcompile-main.cc.o
+│   │   │       │   │   │   ├── fstcompile-main.cc.o.d
+│   │   │       │   │   │   ├── fstcompile.cc.o
+│   │   │       │   │   │   ├── fstcompile.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstcompose.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstcompose-main.cc.o
+│   │   │       │   │   │   ├── fstcompose-main.cc.o.d
+│   │   │       │   │   │   ├── fstcompose.cc.o
+│   │   │       │   │   │   ├── fstcompose.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstconcat.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstconcat-main.cc.o
+│   │   │       │   │   │   ├── fstconcat-main.cc.o.d
+│   │   │       │   │   │   ├── fstconcat.cc.o
+│   │   │       │   │   │   ├── fstconcat.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstconnect.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstconnect-main.cc.o
+│   │   │       │   │   │   ├── fstconnect-main.cc.o.d
+│   │   │       │   │   │   ├── fstconnect.cc.o
+│   │   │       │   │   │   ├── fstconnect.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstconvert.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstconvert-main.cc.o
+│   │   │       │   │   │   ├── fstconvert-main.cc.o.d
+│   │   │       │   │   │   ├── fstconvert.cc.o
+│   │   │       │   │   │   ├── fstconvert.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstdeterminize.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstdeterminize-main.cc.o
+│   │   │       │   │   │   ├── fstdeterminize-main.cc.o.d
+│   │   │       │   │   │   ├── fstdeterminize.cc.o
+│   │   │       │   │   │   ├── fstdeterminize.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstdifference.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstdifference-main.cc.o
+│   │   │       │   │   │   ├── fstdifference-main.cc.o.d
+│   │   │       │   │   │   ├── fstdifference.cc.o
+│   │   │       │   │   │   ├── fstdifference.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstdisambiguate.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstdisambiguate-main.cc.o
+│   │   │       │   │   │   ├── fstdisambiguate-main.cc.o.d
+│   │   │       │   │   │   ├── fstdisambiguate.cc.o
+│   │   │       │   │   │   ├── fstdisambiguate.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstdraw.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstdraw-main.cc.o
+│   │   │       │   │   │   ├── fstdraw-main.cc.o.d
+│   │   │       │   │   │   ├── fstdraw.cc.o
+│   │   │       │   │   │   ├── fstdraw.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstencode.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstencode-main.cc.o
+│   │   │       │   │   │   ├── fstencode-main.cc.o.d
+│   │   │       │   │   │   ├── fstencode.cc.o
+│   │   │       │   │   │   ├── fstencode.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstepsnormalize.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstepsnormalize-main.cc.o
+│   │   │       │   │   │   ├── fstepsnormalize-main.cc.o.d
+│   │   │       │   │   │   ├── fstepsnormalize.cc.o
+│   │   │       │   │   │   ├── fstepsnormalize.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstequal.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstequal-main.cc.o
+│   │   │       │   │   │   ├── fstequal-main.cc.o.d
+│   │   │       │   │   │   ├── fstequal.cc.o
+│   │   │       │   │   │   ├── fstequal.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstequivalent.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstequivalent-main.cc.o
+│   │   │       │   │   │   ├── fstequivalent-main.cc.o.d
+│   │   │       │   │   │   ├── fstequivalent.cc.o
+│   │   │       │   │   │   ├── fstequivalent.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstinfo.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstinfo-main.cc.o
+│   │   │       │   │   │   ├── fstinfo-main.cc.o.d
+│   │   │       │   │   │   ├── fstinfo.cc.o
+│   │   │       │   │   │   ├── fstinfo.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstintersect.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstintersect-main.cc.o
+│   │   │       │   │   │   ├── fstintersect-main.cc.o.d
+│   │   │       │   │   │   ├── fstintersect.cc.o
+│   │   │       │   │   │   ├── fstintersect.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstinvert.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstinvert-main.cc.o
+│   │   │       │   │   │   ├── fstinvert-main.cc.o.d
+│   │   │       │   │   │   ├── fstinvert.cc.o
+│   │   │       │   │   │   ├── fstinvert.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstisomorphic.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstisomorphic-main.cc.o
+│   │   │       │   │   │   ├── fstisomorphic-main.cc.o.d
+│   │   │       │   │   │   ├── fstisomorphic.cc.o
+│   │   │       │   │   │   ├── fstisomorphic.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstmap.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstmap-main.cc.o
+│   │   │       │   │   │   ├── fstmap-main.cc.o.d
+│   │   │       │   │   │   ├── fstmap.cc.o
+│   │   │       │   │   │   ├── fstmap.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstminimize.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstminimize-main.cc.o
+│   │   │       │   │   │   ├── fstminimize-main.cc.o.d
+│   │   │       │   │   │   ├── fstminimize.cc.o
+│   │   │       │   │   │   ├── fstminimize.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstprint.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstprint-main.cc.o
+│   │   │       │   │   │   ├── fstprint-main.cc.o.d
+│   │   │       │   │   │   ├── fstprint.cc.o
+│   │   │       │   │   │   ├── fstprint.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstproject.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstproject-main.cc.o
+│   │   │       │   │   │   ├── fstproject-main.cc.o.d
+│   │   │       │   │   │   ├── fstproject.cc.o
+│   │   │       │   │   │   ├── fstproject.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstprune.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstprune-main.cc.o
+│   │   │       │   │   │   ├── fstprune-main.cc.o.d
+│   │   │       │   │   │   ├── fstprune.cc.o
+│   │   │       │   │   │   ├── fstprune.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstpush.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstpush-main.cc.o
+│   │   │       │   │   │   ├── fstpush-main.cc.o.d
+│   │   │       │   │   │   ├── fstpush.cc.o
+│   │   │       │   │   │   ├── fstpush.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstrandgen.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstrandgen-main.cc.o
+│   │   │       │   │   │   ├── fstrandgen-main.cc.o.d
+│   │   │       │   │   │   ├── fstrandgen.cc.o
+│   │   │       │   │   │   ├── fstrandgen.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstrelabel.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstrelabel-main.cc.o
+│   │   │       │   │   │   ├── fstrelabel-main.cc.o.d
+│   │   │       │   │   │   ├── fstrelabel.cc.o
+│   │   │       │   │   │   ├── fstrelabel.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstreplace.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstreplace-main.cc.o
+│   │   │       │   │   │   ├── fstreplace-main.cc.o.d
+│   │   │       │   │   │   ├── fstreplace.cc.o
+│   │   │       │   │   │   ├── fstreplace.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstreverse.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstreverse-main.cc.o
+│   │   │       │   │   │   ├── fstreverse-main.cc.o.d
+│   │   │       │   │   │   ├── fstreverse.cc.o
+│   │   │       │   │   │   ├── fstreverse.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstreweight.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstreweight-main.cc.o
+│   │   │       │   │   │   ├── fstreweight-main.cc.o.d
+│   │   │       │   │   │   ├── fstreweight.cc.o
+│   │   │       │   │   │   ├── fstreweight.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstrmepsilon.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstrmepsilon-main.cc.o
+│   │   │       │   │   │   ├── fstrmepsilon-main.cc.o.d
+│   │   │       │   │   │   ├── fstrmepsilon.cc.o
+│   │   │       │   │   │   ├── fstrmepsilon.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstshortestdistance.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstshortestdistance-main.cc.o
+│   │   │       │   │   │   ├── fstshortestdistance-main.cc.o.d
+│   │   │       │   │   │   ├── fstshortestdistance.cc.o
+│   │   │       │   │   │   ├── fstshortestdistance.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstshortestpath.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstshortestpath-main.cc.o
+│   │   │       │   │   │   ├── fstshortestpath-main.cc.o.d
+│   │   │       │   │   │   ├── fstshortestpath.cc.o
+│   │   │       │   │   │   ├── fstshortestpath.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstsymbols.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstsymbols-main.cc.o
+│   │   │       │   │   │   ├── fstsymbols-main.cc.o.d
+│   │   │       │   │   │   ├── fstsymbols.cc.o
+│   │   │       │   │   │   ├── fstsymbols.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstsynchronize.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstsynchronize-main.cc.o
+│   │   │       │   │   │   ├── fstsynchronize-main.cc.o.d
+│   │   │       │   │   │   ├── fstsynchronize.cc.o
+│   │   │       │   │   │   ├── fstsynchronize.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fsttopsort.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fsttopsort-main.cc.o
+│   │   │       │   │   │   ├── fsttopsort-main.cc.o.d
+│   │   │       │   │   │   ├── fsttopsort.cc.o
+│   │   │       │   │   │   ├── fsttopsort.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   ├── fstunion.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fstunion-main.cc.o
+│   │   │       │   │   │   ├── fstunion-main.cc.o.d
+│   │   │       │   │   │   ├── fstunion.cc.o
+│   │   │       │   │   │   ├── fstunion.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   └── progress.make
+│   │   │       │   │   └── progress.marks
+│   │   │       │   ├── CTestTestfile.cmake
+│   │   │       │   ├── Makefile
+│   │   │       │   └── cmake_install.cmake
+│   │   │       ├── cmake_install.cmake
+│   │   │       ├── extensions
+│   │   │       │   ├── CMakeFiles
+│   │   │       │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │       │   │   └── progress.marks
+│   │   │       │   ├── CTestTestfile.cmake
+│   │   │       │   ├── Makefile
+│   │   │       │   └── cmake_install.cmake
+│   │   │       ├── lib
+│   │   │       │   ├── CMakeFiles
+│   │   │       │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │       │   │   ├── fst.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compat.cc.o
+│   │   │       │   │   │   ├── compat.cc.o.d
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── flags.cc.o
+│   │   │       │   │   │   ├── flags.cc.o.d
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fst-types.cc.o
+│   │   │       │   │   │   ├── fst-types.cc.o.d
+│   │   │       │   │   │   ├── fst.cc.o
+│   │   │       │   │   │   ├── fst.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   ├── mapped-file.cc.o
+│   │   │       │   │   │   ├── mapped-file.cc.o.d
+│   │   │       │   │   │   ├── progress.make
+│   │   │       │   │   │   ├── properties.cc.o
+│   │   │       │   │   │   ├── properties.cc.o.d
+│   │   │       │   │   │   ├── symbol-table-ops.cc.o
+│   │   │       │   │   │   ├── symbol-table-ops.cc.o.d
+│   │   │       │   │   │   ├── symbol-table.cc.o
+│   │   │       │   │   │   ├── symbol-table.cc.o.d
+│   │   │       │   │   │   ├── util.cc.o
+│   │   │       │   │   │   ├── util.cc.o.d
+│   │   │       │   │   │   ├── weight.cc.o
+│   │   │       │   │   │   └── weight.cc.o.d
+│   │   │       │   │   └── progress.marks
+│   │   │       │   ├── CTestTestfile.cmake
+│   │   │       │   ├── Makefile
+│   │   │       │   ├── cmake_install.cmake
+│   │   │       │   ├── libfst.so -> libfst.so.16
+│   │   │       │   └── libfst.so.16
+│   │   │       ├── script
+│   │   │       │   ├── CMakeFiles
+│   │   │       │   │   ├── CMakeDirectoryInformation.cmake
+│   │   │       │   │   ├── fstscript.dir
+│   │   │       │   │   │   ├── DependInfo.cmake
+│   │   │       │   │   │   ├── arciterator-class.cc.o
+│   │   │       │   │   │   ├── arciterator-class.cc.o.d
+│   │   │       │   │   │   ├── arcsort.cc.o
+│   │   │       │   │   │   ├── arcsort.cc.o.d
+│   │   │       │   │   │   ├── build.make
+│   │   │       │   │   │   ├── closure.cc.o
+│   │   │       │   │   │   ├── closure.cc.o.d
+│   │   │       │   │   │   ├── cmake_clean.cmake
+│   │   │       │   │   │   ├── compile.cc.o
+│   │   │       │   │   │   ├── compile.cc.o.d
+│   │   │       │   │   │   ├── compiler_depend.internal
+│   │   │       │   │   │   ├── compiler_depend.make
+│   │   │       │   │   │   ├── compiler_depend.ts
+│   │   │       │   │   │   ├── compose.cc.o
+│   │   │       │   │   │   ├── compose.cc.o.d
+│   │   │       │   │   │   ├── concat.cc.o
+│   │   │       │   │   │   ├── concat.cc.o.d
+│   │   │       │   │   │   ├── connect.cc.o
+│   │   │       │   │   │   ├── connect.cc.o.d
+│   │   │       │   │   │   ├── convert.cc.o
+│   │   │       │   │   │   ├── convert.cc.o.d
+│   │   │       │   │   │   ├── decode.cc.o
+│   │   │       │   │   │   ├── decode.cc.o.d
+│   │   │       │   │   │   ├── depend.make
+│   │   │       │   │   │   ├── determinize.cc.o
+│   │   │       │   │   │   ├── determinize.cc.o.d
+│   │   │       │   │   │   ├── difference.cc.o
+│   │   │       │   │   │   ├── difference.cc.o.d
+│   │   │       │   │   │   ├── disambiguate.cc.o
+│   │   │       │   │   │   ├── disambiguate.cc.o.d
+│   │   │       │   │   │   ├── draw.cc.o
+│   │   │       │   │   │   ├── draw.cc.o.d
+│   │   │       │   │   │   ├── encode.cc.o
+│   │   │       │   │   │   ├── encode.cc.o.d
+│   │   │       │   │   │   ├── encodemapper-class.cc.o
+│   │   │       │   │   │   ├── encodemapper-class.cc.o.d
+│   │   │       │   │   │   ├── epsnormalize.cc.o
+│   │   │       │   │   │   ├── epsnormalize.cc.o.d
+│   │   │       │   │   │   ├── equal.cc.o
+│   │   │       │   │   │   ├── equal.cc.o.d
+│   │   │       │   │   │   ├── equivalent.cc.o
+│   │   │       │   │   │   ├── equivalent.cc.o.d
+│   │   │       │   │   │   ├── flags.make
+│   │   │       │   │   │   ├── fst-class.cc.o
+│   │   │       │   │   │   ├── fst-class.cc.o.d
+│   │   │       │   │   │   ├── getters.cc.o
+│   │   │       │   │   │   ├── getters.cc.o.d
+│   │   │       │   │   │   ├── info-impl.cc.o
+│   │   │       │   │   │   ├── info-impl.cc.o.d
+│   │   │       │   │   │   ├── info.cc.o
+│   │   │       │   │   │   ├── info.cc.o.d
+│   │   │       │   │   │   ├── intersect.cc.o
+│   │   │       │   │   │   ├── intersect.cc.o.d
+│   │   │       │   │   │   ├── invert.cc.o
+│   │   │       │   │   │   ├── invert.cc.o.d
+│   │   │       │   │   │   ├── isomorphic.cc.o
+│   │   │       │   │   │   ├── isomorphic.cc.o.d
+│   │   │       │   │   │   ├── link.txt
+│   │   │       │   │   │   ├── map.cc.o
+│   │   │       │   │   │   ├── map.cc.o.d
+│   │   │       │   │   │   ├── minimize.cc.o
+│   │   │       │   │   │   ├── minimize.cc.o.d
+│   │   │       │   │   │   ├── print.cc.o
+│   │   │       │   │   │   ├── print.cc.o.d
+│   │   │       │   │   │   ├── progress.make
+│   │   │       │   │   │   ├── project.cc.o
+│   │   │       │   │   │   ├── project.cc.o.d
+│   │   │       │   │   │   ├── prune.cc.o
+│   │   │       │   │   │   ├── prune.cc.o.d
+│   │   │       │   │   │   ├── push.cc.o
+│   │   │       │   │   │   ├── push.cc.o.d
+│   │   │       │   │   │   ├── randequivalent.cc.o
+│   │   │       │   │   │   ├── randequivalent.cc.o.d
+│   │   │       │   │   │   ├── randgen.cc.o
+│   │   │       │   │   │   ├── randgen.cc.o.d
+│   │   │       │   │   │   ├── relabel.cc.o
+│   │   │       │   │   │   ├── relabel.cc.o.d
+│   │   │       │   │   │   ├── replace.cc.o
+│   │   │       │   │   │   ├── replace.cc.o.d
+│   │   │       │   │   │   ├── reverse.cc.o
+│   │   │       │   │   │   ├── reverse.cc.o.d
+│   │   │       │   │   │   ├── reweight.cc.o
+│   │   │       │   │   │   ├── reweight.cc.o.d
+│   │   │       │   │   │   ├── rmepsilon.cc.o
+│   │   │       │   │   │   ├── rmepsilon.cc.o.d
+│   │   │       │   │   │   ├── shortest-distance.cc.o
+│   │   │       │   │   │   ├── shortest-distance.cc.o.d
+│   │   │       │   │   │   ├── shortest-path.cc.o
+│   │   │       │   │   │   ├── shortest-path.cc.o.d
+│   │   │       │   │   │   ├── stateiterator-class.cc.o
+│   │   │       │   │   │   ├── stateiterator-class.cc.o.d
+│   │   │       │   │   │   ├── synchronize.cc.o
+│   │   │       │   │   │   ├── synchronize.cc.o.d
+│   │   │       │   │   │   ├── text-io.cc.o
+│   │   │       │   │   │   ├── text-io.cc.o.d
+│   │   │       │   │   │   ├── topsort.cc.o
+│   │   │       │   │   │   ├── topsort.cc.o.d
+│   │   │       │   │   │   ├── union.cc.o
+│   │   │       │   │   │   ├── union.cc.o.d
+│   │   │       │   │   │   ├── verify.cc.o
+│   │   │       │   │   │   ├── verify.cc.o.d
+│   │   │       │   │   │   ├── weight-class.cc.o
+│   │   │       │   │   │   └── weight-class.cc.o.d
+│   │   │       │   │   └── progress.marks
+│   │   │       │   ├── CTestTestfile.cmake
+│   │   │       │   ├── Makefile
+│   │   │       │   ├── cmake_install.cmake
+│   │   │       │   ├── libfstscript.so -> libfstscript.so.16
+│   │   │       │   └── libfstscript.so.16
+│   │   │       └── test
+│   │   │           ├── CMakeFiles
+│   │   │           │   ├── CMakeDirectoryInformation.cmake
+│   │   │           │   ├── algo_test_lexicographic.dir
+│   │   │           │   │   ├── DependInfo.cmake
+│   │   │           │   │   ├── build.make
+│   │   │           │   │   ├── cmake_clean.cmake
+│   │   │           │   │   ├── compiler_depend.make
+│   │   │           │   │   ├── compiler_depend.ts
+│   │   │           │   │   ├── depend.make
+│   │   │           │   │   ├── flags.make
+│   │   │           │   │   ├── link.txt
+│   │   │           │   │   └── progress.make
+│   │   │           │   ├── algo_test_log.dir
+│   │   │           │   │   ├── DependInfo.cmake
+│   │   │           │   │   ├── build.make
+│   │   │           │   │   ├── cmake_clean.cmake
+│   │   │           │   │   ├── compiler_depend.make
+│   │   │           │   │   ├── compiler_depend.ts
+│   │   │           │   │   ├── depend.make
+│   │   │           │   │   ├── flags.make
+│   │   │           │   │   ├── link.txt
+│   │   │           │   │   └── progress.make
+│   │   │           │   ├── algo_test_minmax.dir
+│   │   │           │   │   ├── DependInfo.cmake
+│   │   │           │   │   ├── build.make
+│   │   │           │   │   ├── cmake_clean.cmake
+│   │   │           │   │   ├── compiler_depend.make
+│   │   │           │   │   ├── compiler_depend.ts
+│   │   │           │   │   ├── depend.make
+│   │   │           │   │   ├── flags.make
+│   │   │           │   │   ├── link.txt
+│   │   │           │   │   └── progress.make
+│   │   │           │   ├── algo_test_power.dir
+│   │   │           │   │   ├── DependInfo.cmake
+│   │   │           │   │   ├── build.make
+│   │   │           │   │   ├── cmake_clean.cmake
+│   │   │           │   │   ├── compiler_depend.make
+│   │   │           │   │   ├── compiler_depend.ts
+│   │   │           │   │   ├── depend.make
+│   │   │           │   │   ├── flags.make
+│   │   │           │   │   ├── link.txt
+│   │   │           │   │   └── progress.make
+│   │   │           │   ├── algo_test_tropical.dir
+│   │   │           │   │   ├── DependInfo.cmake
+│   │   │           │   │   ├── build.make
+│   │   │           │   │   ├── cmake_clean.cmake
+│   │   │           │   │   ├── compiler_depend.make
+│   │   │           │   │   ├── compiler_depend.ts
+│   │   │           │   │   ├── depend.make
+│   │   │           │   │   ├── flags.make
+│   │   │           │   │   ├── link.txt
+│   │   │           │   │   └── progress.make
+│   │   │           │   ├── fst_test.dir
+│   │   │           │   │   ├── DependInfo.cmake
+│   │   │           │   │   ├── build.make
+│   │   │           │   │   ├── cmake_clean.cmake
+│   │   │           │   │   ├── compiler_depend.make
+│   │   │           │   │   ├── compiler_depend.ts
+│   │   │           │   │   ├── depend.make
+│   │   │           │   │   ├── flags.make
+│   │   │           │   │   ├── link.txt
+│   │   │           │   │   └── progress.make
+│   │   │           │   ├── progress.marks
+│   │   │           │   └── weight_test.dir
+│   │   │           │       ├── DependInfo.cmake
+│   │   │           │       ├── build.make
+│   │   │           │       ├── cmake_clean.cmake
+│   │   │           │       ├── compiler_depend.make
+│   │   │           │       ├── compiler_depend.ts
+│   │   │           │       ├── depend.make
+│   │   │           │       ├── flags.make
+│   │   │           │       ├── link.txt
+│   │   │           │       └── progress.make
+│   │   │           ├── CTestTestfile.cmake
+│   │   │           ├── Makefile
+│   │   │           └── cmake_install.cmake
+│   │   └── yaml-cpp
+│   │       ├── CMakeFiles
+│   │       │   ├── CMakeDirectoryInformation.cmake
+│   │       │   ├── Export
+│   │       │   │   └── lib
+│   │       │   │       └── cmake
+│   │       │   │           └── yaml-cpp
+│   │       │   │               ├── yaml-cpp-targets-release.cmake
+│   │       │   │               └── yaml-cpp-targets.cmake
+│   │       │   ├── debuggable.dir
+│   │       │   │   ├── DependInfo.cmake
+│   │       │   │   ├── build.make
+│   │       │   │   ├── cmake_clean.cmake
+│   │       │   │   ├── compiler_depend.make
+│   │       │   │   ├── compiler_depend.ts
+│   │       │   │   └── progress.make
+│   │       │   ├── format.dir
+│   │       │   │   ├── DependInfo.cmake
+│   │       │   │   ├── build.make
+│   │       │   │   ├── cmake_clean.cmake
+│   │       │   │   ├── compiler_depend.make
+│   │       │   │   ├── compiler_depend.ts
+│   │       │   │   └── progress.make
+│   │       │   ├── progress.marks
+│   │       │   ├── releasable.dir
+│   │       │   │   ├── DependInfo.cmake
+│   │       │   │   ├── build.make
+│   │       │   │   ├── cmake_clean.cmake
+│   │       │   │   ├── compiler_depend.make
+│   │       │   │   ├── compiler_depend.ts
+│   │       │   │   └── progress.make
+│   │       │   ├── yaml-cpp-config.cmake
+│   │       │   └── yaml-cpp.dir
+│   │       │       ├── DependInfo.cmake
+│   │       │       ├── build.make
+│   │       │       ├── cmake_clean.cmake
+│   │       │       ├── compiler_depend.internal
+│   │       │       ├── compiler_depend.make
+│   │       │       ├── compiler_depend.ts
+│   │       │       ├── depend.make
+│   │       │       ├── flags.make
+│   │       │       ├── link.txt
+│   │       │       ├── progress.make
+│   │       │       └── src
+│   │       │           ├── binary.cpp.o
+│   │       │           ├── binary.cpp.o.d
+│   │       │           ├── convert.cpp.o
+│   │       │           ├── convert.cpp.o.d
+│   │       │           ├── directives.cpp.o
+│   │       │           ├── directives.cpp.o.d
+│   │       │           ├── emit.cpp.o
+│   │       │           ├── emit.cpp.o.d
+│   │       │           ├── emitfromevents.cpp.o
+│   │       │           ├── emitfromevents.cpp.o.d
+│   │       │           ├── emitter.cpp.o
+│   │       │           ├── emitter.cpp.o.d
+│   │       │           ├── emitterstate.cpp.o
+│   │       │           ├── emitterstate.cpp.o.d
+│   │       │           ├── emitterutils.cpp.o
+│   │       │           ├── emitterutils.cpp.o.d
+│   │       │           ├── exceptions.cpp.o
+│   │       │           ├── exceptions.cpp.o.d
+│   │       │           ├── exp.cpp.o
+│   │       │           ├── exp.cpp.o.d
+│   │       │           ├── memory.cpp.o
+│   │       │           ├── memory.cpp.o.d
+│   │       │           ├── node.cpp.o
+│   │       │           ├── node.cpp.o.d
+│   │       │           ├── node_data.cpp.o
+│   │       │           ├── node_data.cpp.o.d
+│   │       │           ├── nodebuilder.cpp.o
+│   │       │           ├── nodebuilder.cpp.o.d
+│   │       │           ├── nodeevents.cpp.o
+│   │       │           ├── nodeevents.cpp.o.d
+│   │       │           ├── null.cpp.o
+│   │       │           ├── null.cpp.o.d
+│   │       │           ├── ostream_wrapper.cpp.o
+│   │       │           ├── ostream_wrapper.cpp.o.d
+│   │       │           ├── parse.cpp.o
+│   │       │           ├── parse.cpp.o.d
+│   │       │           ├── parser.cpp.o
+│   │       │           ├── parser.cpp.o.d
+│   │       │           ├── regex_yaml.cpp.o
+│   │       │           ├── regex_yaml.cpp.o.d
+│   │       │           ├── scanner.cpp.o
+│   │       │           ├── scanner.cpp.o.d
+│   │       │           ├── scanscalar.cpp.o
+│   │       │           ├── scanscalar.cpp.o.d
+│   │       │           ├── scantag.cpp.o
+│   │       │           ├── scantag.cpp.o.d
+│   │       │           ├── scantoken.cpp.o
+│   │       │           ├── scantoken.cpp.o.d
+│   │       │           ├── simplekey.cpp.o
+│   │       │           ├── simplekey.cpp.o.d
+│   │       │           ├── singledocparser.cpp.o
+│   │       │           ├── singledocparser.cpp.o.d
+│   │       │           ├── stream.cpp.o
+│   │       │           ├── stream.cpp.o.d
+│   │       │           ├── tag.cpp.o
+│   │       │           └── tag.cpp.o.d
+│   │       ├── CTestTestfile.cmake
+│   │       ├── Makefile
+│   │       ├── cmake_install.cmake
+│   │       ├── libyaml-cpp.so -> libyaml-cpp.so.0.6
+│   │       ├── libyaml-cpp.so.0.6 -> libyaml-cpp.so.0.6.0
+│   │       ├── libyaml-cpp.so.0.6.0
+│   │       ├── yaml-cpp-config-version.cmake
+│   │       ├── yaml-cpp-config.cmake
+│   │       └── yaml-cpp-targets.cmake
+│   └── yaml-cpp.pc
+├── include
+│   ├── audio.h
+│   ├── com-define.h
+│   ├── funasrruntime.h
+│   ├── itn-model.h
+│   ├── model.h
+│   ├── offline-stream.h
+│   ├── punc-model.h
+│   ├── tclap
+│   │   ├── Arg.h
+│   │   ├── ArgException.h
+│   │   ├── ArgTraits.h
+│   │   ├── CmdLine.h
+│   │   ├── CmdLineInterface.h
+│   │   ├── CmdLineOutput.h
+│   │   ├── Constraint.h
+│   │   ├── DocBookOutput.h
+│   │   ├── HelpVisitor.h
+│   │   ├── IgnoreRestVisitor.h
+│   │   ├── MultiArg.h
+│   │   ├── MultiSwitchArg.h
+│   │   ├── OptionalUnlabeledTracker.h
+│   │   ├── StandardTraits.h
+│   │   ├── StdOutput.h
+│   │   ├── SwitchArg.h
+│   │   ├── UnlabeledMultiArg.h
+│   │   ├── UnlabeledValueArg.h
+│   │   ├── ValueArg.h
+│   │   ├── ValuesConstraint.h
+│   │   ├── VersionVisitor.h
+│   │   ├── Visitor.h
+│   │   ├── XorHandler.h
+│   │   ├── ZshCompletionOutput.h
+│   │   └── sstream.h
+│   ├── tpass-online-stream.h
+│   ├── tpass-stream.h
+│   └── vad-model.h
+├── ltzrun.sh
+├── readme.md
+├── src
+│   ├── CMakeLists.txt
+│   ├── alignedmem.cpp
+│   ├── alignedmem.h
+│   ├── audio.cpp
+│   ├── bias-lm.cpp
+│   ├── bias-lm.h
+│   ├── common-struct.h
+│   ├── commonfunc.h
+│   ├── ct-transformer-online.cpp
+│   ├── ct-transformer-online.h
+│   ├── ct-transformer.cpp
+│   ├── ct-transformer.h
+│   ├── e2e-vad.h
+│   ├── encode_converter.cpp
+│   ├── encode_converter.h
+│   ├── fsmn-vad-online.cpp
+│   ├── fsmn-vad-online.h
+│   ├── fsmn-vad.cpp
+│   ├── fsmn-vad.h
+│   ├── funasrruntime.cpp
+│   ├── itn-processor.cpp
+│   ├── itn-processor.h
+│   ├── itn-token-parser.cpp
+│   ├── itn-token-parser.h
+│   ├── model.cpp
+│   ├── offline-stream.cpp
+│   ├── paraformer-online.cpp
+│   ├── paraformer-online.h
+│   ├── paraformer-torch.cpp
+│   ├── paraformer-torch.h
+│   ├── paraformer.cpp
+│   ├── paraformer.h
+│   ├── phone-set.cpp
+│   ├── phone-set.h
+│   ├── precomp.h
+│   ├── predefine-coe.h
+│   ├── punc-model.cpp
+│   ├── resample.cpp
+│   ├── resample.h
+│   ├── seg_dict.cpp
+│   ├── seg_dict.h
+│   ├── sensevoice-small.cpp
+│   ├── sensevoice-small.h
+│   ├── tensor.h
+│   ├── tokenizer.cpp
+│   ├── tokenizer.h
+│   ├── tpass-online-stream.cpp
+│   ├── tpass-stream.cpp
+│   ├── utf8-string.cpp
+│   ├── utf8-string.h
+│   ├── util.cpp
+│   ├── util.h
+│   ├── vad-model.cpp
+│   ├── vocab.cpp
+│   ├── vocab.h
+│   ├── wfst-decoder.cpp
+│   ├── wfst-decoder.h
+│   └── win_func.h
+├── test.py
+├── third_party
+│   ├── download_ffmpeg.sh
+│   ├── download_onnxruntime.sh
+│   ├── gflags
+│   │   ├── AUTHORS.txt
+│   │   ├── CMakeLists.txt
+│   │   ├── COPYING.txt
+│   │   ├── ChangeLog.txt
+│   │   ├── INSTALL.md
+│   │   ├── README.md
+│   │   ├── WORKSPACE
+│   │   ├── appveyor.yml
+│   │   ├── bazel
+│   │   │   └── gflags.bzl
+│   │   ├── cmake
+│   │   │   ├── README_runtime.txt
+│   │   │   ├── cmake_uninstall.cmake.in
+│   │   │   ├── config.cmake.in
+│   │   │   ├── execute_test.cmake
+│   │   │   ├── package.cmake.in
+│   │   │   ├── package.pc.in
+│   │   │   ├── utils.cmake
+│   │   │   └── version.cmake.in
+│   │   ├── src
+│   │   │   ├── config.h
+│   │   │   ├── defines.h.in
+│   │   │   ├── gflags.cc
+│   │   │   ├── gflags.h.in
+│   │   │   ├── gflags_completions.cc
+│   │   │   ├── gflags_completions.h.in
+│   │   │   ├── gflags_completions.sh
+│   │   │   ├── gflags_declare.h.in
+│   │   │   ├── gflags_ns.h.in
+│   │   │   ├── gflags_reporting.cc
+│   │   │   ├── mutex.h
+│   │   │   ├── util.h
+│   │   │   ├── windows_port.cc
+│   │   │   └── windows_port.h
+│   │   └── test
+│   │       ├── CMakeLists.txt
+│   │       ├── config
+│   │       │   ├── CMakeLists.txt
+│   │       │   └── main.cc
+│   │       ├── flagfile.1
+│   │       ├── flagfile.2
+│   │       ├── flagfile.3
+│   │       ├── gflags_build.py.in
+│   │       ├── gflags_declare_flags.cc
+│   │       ├── gflags_declare_test.cc
+│   │       ├── gflags_strip_flags_test.cc
+│   │       ├── gflags_strip_flags_test.cmake
+│   │       ├── gflags_unittest.cc
+│   │       ├── gflags_unittest_flagfile
+│   │       └── nc
+│   │           ├── CMakeLists.txt
+│   │           └── gflags_nc.cc
+│   ├── glog
+│   │   ├── CMakeLists.txt
+│   │   ├── cmake
+│   │   │   ├── DetermineGflagsNamespace.cmake
+│   │   │   ├── FindUnwind.cmake
+│   │   │   ├── GetCacheVariables.cmake
+│   │   │   ├── RunCleanerTest1.cmake
+│   │   │   ├── RunCleanerTest2.cmake
+│   │   │   ├── RunCleanerTest3.cmake
+│   │   │   ├── TestInitPackageConfig.cmake
+│   │   │   └── TestPackageConfig.cmake
+│   │   ├── glog-config.cmake.in
+│   │   ├── glog-modules.cmake.in
+│   │   ├── libglog.pc.in
+│   │   └── src
+│   │       ├── base
+│   │       │   ├── commandlineflags.h
+│   │       │   ├── googleinit.h
+│   │       │   └── mutex.h
+│   │       ├── config.h
+│   │       ├── config.h.cmake.in
+│   │       ├── demangle.cc
+│   │       ├── demangle.h
+│   │       ├── fuzz_demangle.cc
+│   │       ├── glog
+│   │       │   ├── export.h
+│   │       │   ├── log_severity.h
+│   │       │   ├── logging.h
+│   │       │   ├── logging.h.in
+│   │       │   ├── platform.h
+│   │       │   ├── raw_logging.h
+│   │       │   ├── raw_logging.h.in
+│   │       │   ├── stl_logging.h
+│   │       │   ├── stl_logging.h.in
+│   │       │   ├── vlog_is_on.h
+│   │       │   └── vlog_is_on.h.in
+│   │       ├── logging.cc
+│   │       ├── mock-log.h
+│   │       ├── raw_logging.cc
+│   │       ├── signalhandler.cc
+│   │       ├── stacktrace.h
+│   │       ├── stacktrace_generic-inl.h
+│   │       ├── stacktrace_libunwind-inl.h
+│   │       ├── stacktrace_powerpc-inl.h
+│   │       ├── stacktrace_unittest.cc
+│   │       ├── stacktrace_unwind-inl.h
+│   │       ├── stacktrace_windows-inl.h
+│   │       ├── stacktrace_x86-inl.h
+│   │       ├── symbolize.cc
+│   │       ├── symbolize.h
+│   │       ├── utilities.cc
+│   │       ├── utilities.h
+│   │       ├── vlog_is_on.cc
+│   │       └── windows
+│   │           ├── dirent.h
+│   │           ├── port.cc
+│   │           └── port.h
+│   ├── jieba
+│   │   └── include
+│   │       ├── cppjieba
+│   │       │   ├── DictTrie.hpp
+│   │       │   ├── FullSegment.hpp
+│   │       │   ├── HMMModel.hpp
+│   │       │   ├── HMMSegment.hpp
+│   │       │   ├── Jieba.hpp
+│   │       │   ├── KeywordExtractor.hpp
+│   │       │   ├── MPSegment.hpp
+│   │       │   ├── MixSegment.hpp
+│   │       │   ├── PosTagger.hpp
+│   │       │   ├── PreFilter.hpp
+│   │       │   ├── QuerySegment.hpp
+│   │       │   ├── SegmentBase.hpp
+│   │       │   ├── SegmentTagged.hpp
+│   │       │   ├── TextRankExtractor.hpp
+│   │       │   ├── Trie.hpp
+│   │       │   └── Unicode.hpp
+│   │       └── limonp
+│   │           ├── ArgvContext.hpp
+│   │           ├── BlockingQueue.hpp
+│   │           ├── BoundedBlockingQueue.hpp
+│   │           ├── BoundedQueue.hpp
+│   │           ├── Closure.hpp
+│   │           ├── Colors.hpp
+│   │           ├── Condition.hpp
+│   │           ├── Config.hpp
+│   │           ├── FileLock.hpp
+│   │           ├── ForcePublic.hpp
+│   │           ├── LocalVector.hpp
+│   │           ├── Logging.hpp
+│   │           ├── Md5.hpp
+│   │           ├── MutexLock.hpp
+│   │           ├── NonCopyable.hpp
+│   │           ├── StdExtension.hpp
+│   │           ├── StringUtil.hpp
+│   │           ├── Thread.hpp
+│   │           └── ThreadPool.hpp
+│   ├── json
+│   │   ├── CITATION.cff
+│   │   ├── CMakeLists.txt
+│   │   ├── ChangeLog.md
+│   │   ├── LICENSE.MIT
+│   │   ├── LICENSES
+│   │   │   ├── Apache-2.0.txt
+│   │   │   ├── BSD-3-Clause.txt
+│   │   │   ├── GPL-3.0-only.txt
+│   │   │   └── MIT.txt
+│   │   ├── Makefile
+│   │   ├── README.md
+│   │   ├── cmake
+│   │   │   ├── ci.cmake
+│   │   │   ├── config.cmake.in
+│   │   │   ├── download_test_data.cmake
+│   │   │   ├── nlohmann_jsonConfigVersion.cmake.in
+│   │   │   ├── pkg-config.pc.in
+│   │   │   └── test.cmake
+│   │   ├── docs
+│   │   │   ├── Makefile
+│   │   │   ├── README.md
+│   │   │   ├── avatars.png
+│   │   │   ├── docset
+│   │   │   │   ├── Info.plist
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── README.md
+│   │   │   │   ├── docSet.sql
+│   │   │   │   ├── docset.json
+│   │   │   │   ├── icon.png
+│   │   │   │   └── icon@2x.png
+│   │   │   ├── examples
+│   │   │   │   ├── README.cpp
+│   │   │   │   ├── README.output
+│   │   │   │   ├── accept__string.cpp
+│   │   │   │   ├── accept__string.output
+│   │   │   │   ├── array.cpp
+│   │   │   │   ├── array.output
+│   │   │   │   ├── array_t.cpp
+│   │   │   │   ├── array_t.output
+│   │   │   │   ├── at__json_pointer.cpp
+│   │   │   │   ├── at__json_pointer.output
+│   │   │   │   ├── at__json_pointer_const.cpp
+│   │   │   │   ├── at__json_pointer_const.output
+│   │   │   │   ├── at__keytype.c++17.cpp
+│   │   │   │   ├── at__keytype.c++17.output
+│   │   │   │   ├── at__keytype_const.c++17.cpp
+│   │   │   │   ├── at__keytype_const.c++17.output
+│   │   │   │   ├── at__object_t_key_type.cpp
+│   │   │   │   ├── at__object_t_key_type.output
+│   │   │   │   ├── at__object_t_key_type_const.cpp
+│   │   │   │   ├── at__object_t_key_type_const.output
+│   │   │   │   ├── at__size_type.cpp
+│   │   │   │   ├── at__size_type.output
+│   │   │   │   ├── at__size_type_const.cpp
+│   │   │   │   ├── at__size_type_const.output
+│   │   │   │   ├── back.cpp
+│   │   │   │   ├── back.output
+│   │   │   │   ├── basic_json__CompatibleType.cpp
+│   │   │   │   ├── basic_json__CompatibleType.output
+│   │   │   │   ├── basic_json__InputIt_InputIt.cpp
+│   │   │   │   ├── basic_json__InputIt_InputIt.output
+│   │   │   │   ├── basic_json__basic_json.cpp
+│   │   │   │   ├── basic_json__basic_json.output
+│   │   │   │   ├── basic_json__copyassignment.cpp
+│   │   │   │   ├── basic_json__copyassignment.output
+│   │   │   │   ├── basic_json__list_init_t.cpp
+│   │   │   │   ├── basic_json__list_init_t.output
+│   │   │   │   ├── basic_json__moveconstructor.cpp
+│   │   │   │   ├── basic_json__moveconstructor.output
+│   │   │   │   ├── basic_json__nullptr_t.cpp
+│   │   │   │   ├── basic_json__nullptr_t.output
+│   │   │   │   ├── basic_json__size_type_basic_json.cpp
+│   │   │   │   ├── basic_json__size_type_basic_json.output
+│   │   │   │   ├── basic_json__value_t.cpp
+│   │   │   │   ├── basic_json__value_t.output
+│   │   │   │   ├── begin.cpp
+│   │   │   │   ├── begin.output
+│   │   │   │   ├── binary.cpp
+│   │   │   │   ├── binary.output
+│   │   │   │   ├── binary_t.cpp
+│   │   │   │   ├── binary_t.output
+│   │   │   │   ├── boolean_t.cpp
+│   │   │   │   ├── boolean_t.output
+│   │   │   │   ├── byte_container_with_subtype__byte_container_with_subtype.cpp
+│   │   │   │   ├── byte_container_with_subtype__byte_container_with_subtype.output
+│   │   │   │   ├── byte_container_with_subtype__clear_subtype.cpp
+│   │   │   │   ├── byte_container_with_subtype__clear_subtype.output
+│   │   │   │   ├── byte_container_with_subtype__has_subtype.cpp
+│   │   │   │   ├── byte_container_with_subtype__has_subtype.output
+│   │   │   │   ├── byte_container_with_subtype__set_subtype.cpp
+│   │   │   │   ├── byte_container_with_subtype__set_subtype.output
+│   │   │   │   ├── byte_container_with_subtype__subtype.cpp
+│   │   │   │   ├── byte_container_with_subtype__subtype.output
+│   │   │   │   ├── cbegin.cpp
+│   │   │   │   ├── cbegin.output
+│   │   │   │   ├── cbor_tag_handler_t.cpp
+│   │   │   │   ├── cbor_tag_handler_t.output
+│   │   │   │   ├── cend.cpp
+│   │   │   │   ├── cend.output
+│   │   │   │   ├── clear.cpp
+│   │   │   │   ├── clear.output
+│   │   │   │   ├── contains__json_pointer.cpp
+│   │   │   │   ├── contains__json_pointer.output
+│   │   │   │   ├── contains__keytype.c++17.cpp
+│   │   │   │   ├── contains__keytype.c++17.output
+│   │   │   │   ├── contains__object_t_key_type.cpp
+│   │   │   │   ├── contains__object_t_key_type.output
+│   │   │   │   ├── count__keytype.c++17.cpp
+│   │   │   │   ├── count__keytype.c++17.output
+│   │   │   │   ├── count__object_t_key_type.cpp
+│   │   │   │   ├── count__object_t_key_type.output
+│   │   │   │   ├── crbegin.cpp
+│   │   │   │   ├── crbegin.output
+│   │   │   │   ├── crend.cpp
+│   │   │   │   ├── crend.output
+│   │   │   │   ├── default_object_comparator_t.cpp
+│   │   │   │   ├── default_object_comparator_t.output
+│   │   │   │   ├── diagnostics_extended.cpp
+│   │   │   │   ├── diagnostics_extended.output
+│   │   │   │   ├── diagnostics_standard.cpp
+│   │   │   │   ├── diagnostics_standard.output
+│   │   │   │   ├── diff.cpp
+│   │   │   │   ├── diff.output
+│   │   │   │   ├── dump.cpp
+│   │   │   │   ├── dump.output
+│   │   │   │   ├── emplace.cpp
+│   │   │   │   ├── emplace.output
+│   │   │   │   ├── emplace_back.cpp
+│   │   │   │   ├── emplace_back.output
+│   │   │   │   ├── empty.cpp
+│   │   │   │   ├── empty.output
+│   │   │   │   ├── end.cpp
+│   │   │   │   ├── end.output
+│   │   │   │   ├── erase__IteratorType.cpp
+│   │   │   │   ├── erase__IteratorType.output
+│   │   │   │   ├── erase__IteratorType_IteratorType.cpp
+│   │   │   │   ├── erase__IteratorType_IteratorType.output
+│   │   │   │   ├── erase__keytype.c++17.cpp
+│   │   │   │   ├── erase__keytype.c++17.output
+│   │   │   │   ├── erase__object_t_key_type.cpp
+│   │   │   │   ├── erase__object_t_key_type.output
+│   │   │   │   ├── erase__size_type.cpp
+│   │   │   │   ├── erase__size_type.output
+│   │   │   │   ├── error_handler_t.cpp
+│   │   │   │   ├── error_handler_t.output
+│   │   │   │   ├── exception.cpp
+│   │   │   │   ├── exception.output
+│   │   │   │   ├── find__keytype.c++17.cpp
+│   │   │   │   ├── find__keytype.c++17.output
+│   │   │   │   ├── find__object_t_key_type.cpp
+│   │   │   │   ├── find__object_t_key_type.output
+│   │   │   │   ├── flatten.cpp
+│   │   │   │   ├── flatten.output
+│   │   │   │   ├── from_bjdata.cpp
+│   │   │   │   ├── from_bjdata.output
+│   │   │   │   ├── from_bson.cpp
+│   │   │   │   ├── from_bson.output
+│   │   │   │   ├── from_cbor.cpp
+│   │   │   │   ├── from_cbor.output
+│   │   │   │   ├── from_json__default_constructible.cpp
+│   │   │   │   ├── from_json__default_constructible.output
+│   │   │   │   ├── from_json__non_default_constructible.cpp
+│   │   │   │   ├── from_json__non_default_constructible.output
+│   │   │   │   ├── from_msgpack.cpp
+│   │   │   │   ├── from_msgpack.output
+│   │   │   │   ├── from_ubjson.cpp
+│   │   │   │   ├── from_ubjson.output
+│   │   │   │   ├── front.cpp
+│   │   │   │   ├── front.output
+│   │   │   │   ├── get__PointerType.cpp
+│   │   │   │   ├── get__PointerType.output
+│   │   │   │   ├── get__ValueType_const.cpp
+│   │   │   │   ├── get__ValueType_const.output
+│   │   │   │   ├── get_allocator.cpp
+│   │   │   │   ├── get_allocator.output
+│   │   │   │   ├── get_binary.cpp
+│   │   │   │   ├── get_binary.output
+│   │   │   │   ├── get_ptr.cpp
+│   │   │   │   ├── get_ptr.output
+│   │   │   │   ├── get_ref.cpp
+│   │   │   │   ├── get_ref.output
+│   │   │   │   ├── get_to.cpp
+│   │   │   │   ├── get_to.output
+│   │   │   │   ├── insert.cpp
+│   │   │   │   ├── insert.output
+│   │   │   │   ├── insert__count.cpp
+│   │   │   │   ├── insert__count.output
+│   │   │   │   ├── insert__ilist.cpp
+│   │   │   │   ├── insert__ilist.output
+│   │   │   │   ├── insert__range.cpp
+│   │   │   │   ├── insert__range.output
+│   │   │   │   ├── insert__range_object.cpp
+│   │   │   │   ├── insert__range_object.output
+│   │   │   │   ├── invalid_iterator.cpp
+│   │   │   │   ├── invalid_iterator.output
+│   │   │   │   ├── is_array.cpp
+│   │   │   │   ├── is_array.output
+│   │   │   │   ├── is_binary.cpp
+│   │   │   │   ├── is_binary.output
+│   │   │   │   ├── is_boolean.cpp
+│   │   │   │   ├── is_boolean.output
+│   │   │   │   ├── is_discarded.cpp
+│   │   │   │   ├── is_discarded.output
+│   │   │   │   ├── is_null.cpp
+│   │   │   │   ├── is_null.output
+│   │   │   │   ├── is_number.cpp
+│   │   │   │   ├── is_number.output
+│   │   │   │   ├── is_number_float.cpp
+│   │   │   │   ├── is_number_float.output
+│   │   │   │   ├── is_number_integer.cpp
+│   │   │   │   ├── is_number_integer.output
+│   │   │   │   ├── is_number_unsigned.cpp
+│   │   │   │   ├── is_number_unsigned.output
+│   │   │   │   ├── is_object.cpp
+│   │   │   │   ├── is_object.output
+│   │   │   │   ├── is_primitive.cpp
+│   │   │   │   ├── is_primitive.output
+│   │   │   │   ├── is_string.cpp
+│   │   │   │   ├── is_string.output
+│   │   │   │   ├── is_structured.cpp
+│   │   │   │   ├── is_structured.output
+│   │   │   │   ├── items.cpp
+│   │   │   │   ├── items.output
+│   │   │   │   ├── json_lines.cpp
+│   │   │   │   ├── json_lines.output
+│   │   │   │   ├── json_pointer.cpp
+│   │   │   │   ├── json_pointer.output
+│   │   │   │   ├── json_pointer__back.cpp
+│   │   │   │   ├── json_pointer__back.output
+│   │   │   │   ├── json_pointer__empty.cpp
+│   │   │   │   ├── json_pointer__empty.output
+│   │   │   │   ├── json_pointer__operator__equal.cpp
+│   │   │   │   ├── json_pointer__operator__equal.output
+│   │   │   │   ├── json_pointer__operator__equal_stringtype.cpp
+│   │   │   │   ├── json_pointer__operator__equal_stringtype.output
+│   │   │   │   ├── json_pointer__operator__notequal.cpp
+│   │   │   │   ├── json_pointer__operator__notequal.output
+│   │   │   │   ├── json_pointer__operator__notequal_stringtype.cpp
+│   │   │   │   ├── json_pointer__operator__notequal_stringtype.output
+│   │   │   │   ├── json_pointer__operator_add.cpp
+│   │   │   │   ├── json_pointer__operator_add.output
+│   │   │   │   ├── json_pointer__operator_add_binary.cpp
+│   │   │   │   ├── json_pointer__operator_add_binary.output
+│   │   │   │   ├── json_pointer__operator_string_t.cpp
+│   │   │   │   ├── json_pointer__operator_string_t.output
+│   │   │   │   ├── json_pointer__parent_pointer.cpp
+│   │   │   │   ├── json_pointer__parent_pointer.output
+│   │   │   │   ├── json_pointer__pop_back.cpp
+│   │   │   │   ├── json_pointer__pop_back.output
+│   │   │   │   ├── json_pointer__push_back.cpp
+│   │   │   │   ├── json_pointer__push_back.output
+│   │   │   │   ├── json_pointer__string_t.cpp
+│   │   │   │   ├── json_pointer__string_t.output
+│   │   │   │   ├── json_pointer__to_string.cpp
+│   │   │   │   ├── json_pointer__to_string.output
+│   │   │   │   ├── max_size.cpp
+│   │   │   │   ├── max_size.output
+│   │   │   │   ├── merge_patch.cpp
+│   │   │   │   ├── merge_patch.output
+│   │   │   │   ├── meta.cpp
+│   │   │   │   ├── meta.output
+│   │   │   │   ├── nlohmann_define_type_intrusive_explicit.cpp
+│   │   │   │   ├── nlohmann_define_type_intrusive_explicit.output
+│   │   │   │   ├── nlohmann_define_type_intrusive_macro.cpp
+│   │   │   │   ├── nlohmann_define_type_intrusive_macro.output
+│   │   │   │   ├── nlohmann_define_type_intrusive_with_default_explicit.cpp
+│   │   │   │   ├── nlohmann_define_type_intrusive_with_default_explicit.output
+│   │   │   │   ├── nlohmann_define_type_intrusive_with_default_macro.cpp
+│   │   │   │   ├── nlohmann_define_type_intrusive_with_default_macro.output
+│   │   │   │   ├── nlohmann_define_type_non_intrusive_explicit.cpp
+│   │   │   │   ├── nlohmann_define_type_non_intrusive_explicit.output
+│   │   │   │   ├── nlohmann_define_type_non_intrusive_macro.cpp
+│   │   │   │   ├── nlohmann_define_type_non_intrusive_macro.output
+│   │   │   │   ├── nlohmann_define_type_non_intrusive_with_default_explicit.cpp
+│   │   │   │   ├── nlohmann_define_type_non_intrusive_with_default_explicit.output
+│   │   │   │   ├── nlohmann_define_type_non_intrusive_with_default_macro.cpp
+│   │   │   │   ├── nlohmann_define_type_non_intrusive_with_default_macro.output
+│   │   │   │   ├── nlohmann_json_namespace.cpp
+│   │   │   │   ├── nlohmann_json_namespace.output
+│   │   │   │   ├── nlohmann_json_namespace_begin.c++17.cpp
+│   │   │   │   ├── nlohmann_json_namespace_begin.c++17.output
+│   │   │   │   ├── nlohmann_json_namespace_no_version.cpp
+│   │   │   │   ├── nlohmann_json_namespace_no_version.output
+│   │   │   │   ├── nlohmann_json_serialize_enum.cpp
+│   │   │   │   ├── nlohmann_json_serialize_enum.output
+│   │   │   │   ├── nlohmann_json_serialize_enum_2.cpp
+│   │   │   │   ├── nlohmann_json_serialize_enum_2.output
+│   │   │   │   ├── nlohmann_json_version.cpp
+│   │   │   │   ├── nlohmann_json_version.output
+│   │   │   │   ├── number_float_t.cpp
+│   │   │   │   ├── number_float_t.output
+│   │   │   │   ├── number_integer_t.cpp
+│   │   │   │   ├── number_integer_t.output
+│   │   │   │   ├── number_unsigned_t.cpp
+│   │   │   │   ├── number_unsigned_t.output
+│   │   │   │   ├── object.cpp
+│   │   │   │   ├── object.output
+│   │   │   │   ├── object_comparator_t.cpp
+│   │   │   │   ├── object_comparator_t.output
+│   │   │   │   ├── object_t.cpp
+│   │   │   │   ├── object_t.output
+│   │   │   │   ├── operator__ValueType.cpp
+│   │   │   │   ├── operator__ValueType.output
+│   │   │   │   ├── operator__equal.cpp
+│   │   │   │   ├── operator__equal.output
+│   │   │   │   ├── operator__equal__nullptr_t.cpp
+│   │   │   │   ├── operator__equal__nullptr_t.output
+│   │   │   │   ├── operator__equal__specializations.cpp
+│   │   │   │   ├── operator__equal__specializations.output
+│   │   │   │   ├── operator__greater.cpp
+│   │   │   │   ├── operator__greater.output
+│   │   │   │   ├── operator__greaterequal.cpp
+│   │   │   │   ├── operator__greaterequal.output
+│   │   │   │   ├── operator__less.cpp
+│   │   │   │   ├── operator__less.output
+│   │   │   │   ├── operator__lessequal.cpp
+│   │   │   │   ├── operator__lessequal.output
+│   │   │   │   ├── operator__notequal.cpp
+│   │   │   │   ├── operator__notequal.output
+│   │   │   │   ├── operator__notequal__nullptr_t.cpp
+│   │   │   │   ├── operator__notequal__nullptr_t.output
+│   │   │   │   ├── operator__value_t.cpp
+│   │   │   │   ├── operator__value_t.output
+│   │   │   │   ├── operator_array__json_pointer.cpp
+│   │   │   │   ├── operator_array__json_pointer.output
+│   │   │   │   ├── operator_array__json_pointer_const.cpp
+│   │   │   │   ├── operator_array__json_pointer_const.output
+│   │   │   │   ├── operator_array__keytype.c++17.cpp
+│   │   │   │   ├── operator_array__keytype.c++17.output
+│   │   │   │   ├── operator_array__keytype_const.c++17.cpp
+│   │   │   │   ├── operator_array__keytype_const.c++17.output
+│   │   │   │   ├── operator_array__object_t_key_type.cpp
+│   │   │   │   ├── operator_array__object_t_key_type.output
+│   │   │   │   ├── operator_array__object_t_key_type_const.cpp
+│   │   │   │   ├── operator_array__object_t_key_type_const.output
+│   │   │   │   ├── operator_array__size_type.cpp
+│   │   │   │   ├── operator_array__size_type.output
+│   │   │   │   ├── operator_array__size_type_const.cpp
+│   │   │   │   ├── operator_array__size_type_const.output
+│   │   │   │   ├── operator_deserialize.cpp
+│   │   │   │   ├── operator_deserialize.output
+│   │   │   │   ├── operator_literal_json.cpp
+│   │   │   │   ├── operator_literal_json.output
+│   │   │   │   ├── operator_literal_json_pointer.cpp
+│   │   │   │   ├── operator_literal_json_pointer.output
+│   │   │   │   ├── operator_ltlt__basic_json.cpp
+│   │   │   │   ├── operator_ltlt__basic_json.output
+│   │   │   │   ├── operator_ltlt__json_pointer.cpp
+│   │   │   │   ├── operator_ltlt__json_pointer.output
+│   │   │   │   ├── operator_spaceship__const_reference.c++20.cpp
+│   │   │   │   ├── operator_spaceship__const_reference.c++20.output
+│   │   │   │   ├── operator_spaceship__scalartype.c++20.cpp
+│   │   │   │   ├── operator_spaceship__scalartype.c++20.output
+│   │   │   │   ├── ordered_json.cpp
+│   │   │   │   ├── ordered_json.output
+│   │   │   │   ├── ordered_map.cpp
+│   │   │   │   ├── ordered_map.output
+│   │   │   │   ├── other_error.cpp
+│   │   │   │   ├── other_error.output
+│   │   │   │   ├── out_of_range.cpp
+│   │   │   │   ├── out_of_range.output
+│   │   │   │   ├── parse__allow_exceptions.cpp
+│   │   │   │   ├── parse__allow_exceptions.output
+│   │   │   │   ├── parse__array__parser_callback_t.cpp
+│   │   │   │   ├── parse__array__parser_callback_t.output
+│   │   │   │   ├── parse__contiguouscontainer__parser_callback_t.cpp
+│   │   │   │   ├── parse__contiguouscontainer__parser_callback_t.output
+│   │   │   │   ├── parse__istream__parser_callback_t.cpp
+│   │   │   │   ├── parse__istream__parser_callback_t.output
+│   │   │   │   ├── parse__iterator_pair.cpp
+│   │   │   │   ├── parse__iterator_pair.link
+│   │   │   │   ├── parse__iterator_pair.output
+│   │   │   │   ├── parse__pointers.cpp
+│   │   │   │   ├── parse__pointers.link
+│   │   │   │   ├── parse__pointers.output
+│   │   │   │   ├── parse__string__parser_callback_t.cpp
+│   │   │   │   ├── parse__string__parser_callback_t.output
+│   │   │   │   ├── parse_error.cpp
+│   │   │   │   ├── parse_error.output
+│   │   │   │   ├── patch.cpp
+│   │   │   │   ├── patch.output
+│   │   │   │   ├── patch_inplace.cpp
+│   │   │   │   ├── patch_inplace.output
+│   │   │   │   ├── push_back.cpp
+│   │   │   │   ├── push_back.output
+│   │   │   │   ├── push_back__initializer_list.cpp
+│   │   │   │   ├── push_back__initializer_list.output
+│   │   │   │   ├── push_back__object_t__value.cpp
+│   │   │   │   ├── push_back__object_t__value.output
+│   │   │   │   ├── rbegin.cpp
+│   │   │   │   ├── rbegin.output
+│   │   │   │   ├── rend.cpp
+│   │   │   │   ├── rend.output
+│   │   │   │   ├── sax_parse.cpp
+│   │   │   │   ├── sax_parse.output
+│   │   │   │   ├── sax_parse__binary.cpp
+│   │   │   │   ├── sax_parse__binary.output
+│   │   │   │   ├── size.cpp
+│   │   │   │   ├── size.output
+│   │   │   │   ├── std_hash.cpp
+│   │   │   │   ├── std_hash.output
+│   │   │   │   ├── std_swap.cpp
+│   │   │   │   ├── std_swap.output
+│   │   │   │   ├── string_t.cpp
+│   │   │   │   ├── string_t.output
+│   │   │   │   ├── swap__array_t.cpp
+│   │   │   │   ├── swap__array_t.output
+│   │   │   │   ├── swap__binary_t.cpp
+│   │   │   │   ├── swap__binary_t.output
+│   │   │   │   ├── swap__object_t.cpp
+│   │   │   │   ├── swap__object_t.output
+│   │   │   │   ├── swap__reference.cpp
+│   │   │   │   ├── swap__reference.output
+│   │   │   │   ├── swap__string_t.cpp
+│   │   │   │   ├── swap__string_t.output
+│   │   │   │   ├── to_bjdata.cpp
+│   │   │   │   ├── to_bjdata.output
+│   │   │   │   ├── to_bson.cpp
+│   │   │   │   ├── to_bson.output
+│   │   │   │   ├── to_cbor.cpp
+│   │   │   │   ├── to_cbor.output
+│   │   │   │   ├── to_json.cpp
+│   │   │   │   ├── to_json.output
+│   │   │   │   ├── to_msgpack.cpp
+│   │   │   │   ├── to_msgpack.output
+│   │   │   │   ├── to_string.cpp
+│   │   │   │   ├── to_string.output
+│   │   │   │   ├── to_ubjson.cpp
+│   │   │   │   ├── to_ubjson.output
+│   │   │   │   ├── type.cpp
+│   │   │   │   ├── type.output
+│   │   │   │   ├── type_error.cpp
+│   │   │   │   ├── type_error.output
+│   │   │   │   ├── type_name.cpp
+│   │   │   │   ├── type_name.output
+│   │   │   │   ├── unflatten.cpp
+│   │   │   │   ├── unflatten.output
+│   │   │   │   ├── update.cpp
+│   │   │   │   ├── update.output
+│   │   │   │   ├── update__range.cpp
+│   │   │   │   ├── update__range.output
+│   │   │   │   ├── value__json_ptr.cpp
+│   │   │   │   ├── value__json_ptr.output
+│   │   │   │   ├── value__keytype.c++17.cpp
+│   │   │   │   ├── value__keytype.c++17.output
+│   │   │   │   ├── value__object_t_key_type.cpp
+│   │   │   │   └── value__object_t_key_type.output
+│   │   │   ├── json.gif
+│   │   │   ├── mkdocs
+│   │   │   │   ├── Makefile
+│   │   │   │   ├── docs
+│   │   │   │   │   ├── api
+│   │   │   │   │   │   ├── adl_serializer
+│   │   │   │   │   │   │   ├── from_json.md
+│   │   │   │   │   │   │   ├── index.md
+│   │   │   │   │   │   │   └── to_json.md
+│   │   │   │   │   │   ├── basic_json
+│   │   │   │   │   │   │   ├── accept.md
+│   │   │   │   │   │   │   ├── array.md
+│   │   │   │   │   │   │   ├── array_t.md
+│   │   │   │   │   │   │   ├── at.md
+│   │   │   │   │   │   │   ├── back.md
+│   │   │   │   │   │   │   ├── basic_json.md
+│   │   │   │   │   │   │   ├── begin.md
+│   │   │   │   │   │   │   ├── binary.md
+│   │   │   │   │   │   │   ├── binary_t.md
+│   │   │   │   │   │   │   ├── boolean_t.md
+│   │   │   │   │   │   │   ├── cbegin.md
+│   │   │   │   │   │   │   ├── cbor_tag_handler_t.md
+│   │   │   │   │   │   │   ├── cend.md
+│   │   │   │   │   │   │   ├── clear.md
+│   │   │   │   │   │   │   ├── contains.md
+│   │   │   │   │   │   │   ├── count.md
+│   │   │   │   │   │   │   ├── crbegin.md
+│   │   │   │   │   │   │   ├── crend.md
+│   │   │   │   │   │   │   ├── default_object_comparator_t.md
+│   │   │   │   │   │   │   ├── diff.md
+│   │   │   │   │   │   │   ├── dump.md
+│   │   │   │   │   │   │   ├── emplace.md
+│   │   │   │   │   │   │   ├── emplace_back.md
+│   │   │   │   │   │   │   ├── empty.md
+│   │   │   │   │   │   │   ├── end.md
+│   │   │   │   │   │   │   ├── erase.md
+│   │   │   │   │   │   │   ├── error_handler_t.md
+│   │   │   │   │   │   │   ├── exception.md
+│   │   │   │   │   │   │   ├── find.md
+│   │   │   │   │   │   │   ├── flatten.md
+│   │   │   │   │   │   │   ├── from_bjdata.md
+│   │   │   │   │   │   │   ├── from_bson.md
+│   │   │   │   │   │   │   ├── from_cbor.md
+│   │   │   │   │   │   │   ├── from_msgpack.md
+│   │   │   │   │   │   │   ├── from_ubjson.md
+│   │   │   │   │   │   │   ├── front.md
+│   │   │   │   │   │   │   ├── get.md
+│   │   │   │   │   │   │   ├── get_allocator.md
+│   │   │   │   │   │   │   ├── get_binary.md
+│   │   │   │   │   │   │   ├── get_ptr.md
+│   │   │   │   │   │   │   ├── get_ref.md
+│   │   │   │   │   │   │   ├── get_to.md
+│   │   │   │   │   │   │   ├── index.md
+│   │   │   │   │   │   │   ├── input_format_t.md
+│   │   │   │   │   │   │   ├── insert.md
+│   │   │   │   │   │   │   ├── invalid_iterator.md
+│   │   │   │   │   │   │   ├── is_array.md
+│   │   │   │   │   │   │   ├── is_binary.md
+│   │   │   │   │   │   │   ├── is_boolean.md
+│   │   │   │   │   │   │   ├── is_discarded.md
+│   │   │   │   │   │   │   ├── is_null.md
+│   │   │   │   │   │   │   ├── is_number.md
+│   │   │   │   │   │   │   ├── is_number_float.md
+│   │   │   │   │   │   │   ├── is_number_integer.md
+│   │   │   │   │   │   │   ├── is_number_unsigned.md
+│   │   │   │   │   │   │   ├── is_object.md
+│   │   │   │   │   │   │   ├── is_primitive.md
+│   │   │   │   │   │   │   ├── is_string.md
+│   │   │   │   │   │   │   ├── is_structured.md
+│   │   │   │   │   │   │   ├── items.md
+│   │   │   │   │   │   │   ├── json_serializer.md
+│   │   │   │   │   │   │   ├── max_size.md
+│   │   │   │   │   │   │   ├── merge_patch.md
+│   │   │   │   │   │   │   ├── meta.md
+│   │   │   │   │   │   │   ├── number_float_t.md
+│   │   │   │   │   │   │   ├── number_integer_t.md
+│   │   │   │   │   │   │   ├── number_unsigned_t.md
+│   │   │   │   │   │   │   ├── object.md
+│   │   │   │   │   │   │   ├── object_comparator_t.md
+│   │   │   │   │   │   │   ├── object_t.md
+│   │   │   │   │   │   │   ├── operator+=.md
+│   │   │   │   │   │   │   ├── operator=.md
+│   │   │   │   │   │   │   ├── operator[].md
+│   │   │   │   │   │   │   ├── operator_ValueType.md
+│   │   │   │   │   │   │   ├── operator_eq.md
+│   │   │   │   │   │   │   ├── operator_ge.md
+│   │   │   │   │   │   │   ├── operator_gt.md
+│   │   │   │   │   │   │   ├── operator_le.md
+│   │   │   │   │   │   │   ├── operator_lt.md
+│   │   │   │   │   │   │   ├── operator_ne.md
+│   │   │   │   │   │   │   ├── operator_spaceship.md
+│   │   │   │   │   │   │   ├── operator_value_t.md
+│   │   │   │   │   │   │   ├── other_error.md
+│   │   │   │   │   │   │   ├── out_of_range.md
+│   │   │   │   │   │   │   ├── parse.md
+│   │   │   │   │   │   │   ├── parse_error.md
+│   │   │   │   │   │   │   ├── parse_event_t.md
+│   │   │   │   │   │   │   ├── parser_callback_t.md
+│   │   │   │   │   │   │   ├── patch.md
+│   │   │   │   │   │   │   ├── patch_inplace.md
+│   │   │   │   │   │   │   ├── push_back.md
+│   │   │   │   │   │   │   ├── rbegin.md
+│   │   │   │   │   │   │   ├── rend.md
+│   │   │   │   │   │   │   ├── sax_parse.md
+│   │   │   │   │   │   │   ├── size.md
+│   │   │   │   │   │   │   ├── std_hash.md
+│   │   │   │   │   │   │   ├── std_swap.md
+│   │   │   │   │   │   │   ├── string_t.md
+│   │   │   │   │   │   │   ├── swap.md
+│   │   │   │   │   │   │   ├── to_bjdata.md
+│   │   │   │   │   │   │   ├── to_bson.md
+│   │   │   │   │   │   │   ├── to_cbor.md
+│   │   │   │   │   │   │   ├── to_msgpack.md
+│   │   │   │   │   │   │   ├── to_string.md
+│   │   │   │   │   │   │   ├── to_ubjson.md
+│   │   │   │   │   │   │   ├── type.md
+│   │   │   │   │   │   │   ├── type_error.md
+│   │   │   │   │   │   │   ├── type_name.md
+│   │   │   │   │   │   │   ├── unflatten.md
+│   │   │   │   │   │   │   ├── update.md
+│   │   │   │   │   │   │   ├── value.md
+│   │   │   │   │   │   │   ├── value_t.md
+│   │   │   │   │   │   │   └── ~basic_json.md
+│   │   │   │   │   │   ├── byte_container_with_subtype
+│   │   │   │   │   │   │   ├── byte_container_with_subtype.md
+│   │   │   │   │   │   │   ├── clear_subtype.md
+│   │   │   │   │   │   │   ├── has_subtype.md
+│   │   │   │   │   │   │   ├── index.md
+│   │   │   │   │   │   │   ├── set_subtype.md
+│   │   │   │   │   │   │   └── subtype.md
+│   │   │   │   │   │   ├── json.md
+│   │   │   │   │   │   ├── json_pointer
+│   │   │   │   │   │   │   ├── back.md
+│   │   │   │   │   │   │   ├── empty.md
+│   │   │   │   │   │   │   ├── index.md
+│   │   │   │   │   │   │   ├── json_pointer.md
+│   │   │   │   │   │   │   ├── operator_eq.md
+│   │   │   │   │   │   │   ├── operator_ne.md
+│   │   │   │   │   │   │   ├── operator_slash.md
+│   │   │   │   │   │   │   ├── operator_slasheq.md
+│   │   │   │   │   │   │   ├── operator_string_t.md
+│   │   │   │   │   │   │   ├── parent_pointer.md
+│   │   │   │   │   │   │   ├── pop_back.md
+│   │   │   │   │   │   │   ├── push_back.md
+│   │   │   │   │   │   │   ├── string_t.md
+│   │   │   │   │   │   │   └── to_string.md
+│   │   │   │   │   │   ├── json_sax
+│   │   │   │   │   │   │   ├── binary.md
+│   │   │   │   │   │   │   ├── boolean.md
+│   │   │   │   │   │   │   ├── end_array.md
+│   │   │   │   │   │   │   ├── end_object.md
+│   │   │   │   │   │   │   ├── index.md
+│   │   │   │   │   │   │   ├── key.md
+│   │   │   │   │   │   │   ├── null.md
+│   │   │   │   │   │   │   ├── number_float.md
+│   │   │   │   │   │   │   ├── number_integer.md
+│   │   │   │   │   │   │   ├── number_unsigned.md
+│   │   │   │   │   │   │   ├── parse_error.md
+│   │   │   │   │   │   │   ├── start_array.md
+│   │   │   │   │   │   │   ├── start_object.md
+│   │   │   │   │   │   │   └── string.md
+│   │   │   │   │   │   ├── macros
+│   │   │   │   │   │   │   ├── index.md
+│   │   │   │   │   │   │   ├── json_assert.md
+│   │   │   │   │   │   │   ├── json_diagnostics.md
+│   │   │   │   │   │   │   ├── json_disable_enum_serialization.md
+│   │   │   │   │   │   │   ├── json_has_cpp_11.md
+│   │   │   │   │   │   │   ├── json_has_filesystem.md
+│   │   │   │   │   │   │   ├── json_has_ranges.md
+│   │   │   │   │   │   │   ├── json_has_three_way_comparison.md
+│   │   │   │   │   │   │   ├── json_no_io.md
+│   │   │   │   │   │   │   ├── json_noexception.md
+│   │   │   │   │   │   │   ├── json_skip_library_version_check.md
+│   │   │   │   │   │   │   ├── json_skip_unsupported_compiler_check.md
+│   │   │   │   │   │   │   ├── json_throw_user.md
+│   │   │   │   │   │   │   ├── json_use_global_udls.md
+│   │   │   │   │   │   │   ├── json_use_implicit_conversions.md
+│   │   │   │   │   │   │   ├── json_use_legacy_discarded_value_comparison.md
+│   │   │   │   │   │   │   ├── nlohmann_define_type_intrusive.md
+│   │   │   │   │   │   │   ├── nlohmann_define_type_non_intrusive.md
+│   │   │   │   │   │   │   ├── nlohmann_json_namespace.md
+│   │   │   │   │   │   │   ├── nlohmann_json_namespace_begin.md
+│   │   │   │   │   │   │   ├── nlohmann_json_namespace_no_version.md
+│   │   │   │   │   │   │   ├── nlohmann_json_serialize_enum.md
+│   │   │   │   │   │   │   └── nlohmann_json_version_major.md
+│   │   │   │   │   │   ├── operator_gtgt.md
+│   │   │   │   │   │   ├── operator_literal_json.md
+│   │   │   │   │   │   ├── operator_literal_json_pointer.md
+│   │   │   │   │   │   ├── operator_ltlt.md
+│   │   │   │   │   │   ├── ordered_json.md
+│   │   │   │   │   │   └── ordered_map.md
+│   │   │   │   │   ├── css
+│   │   │   │   │   │   └── custom.css
+│   │   │   │   │   ├── features
+│   │   │   │   │   │   ├── arbitrary_types.md
+│   │   │   │   │   │   ├── assertions.md
+│   │   │   │   │   │   ├── binary_formats
+│   │   │   │   │   │   │   ├── bjdata.md
+│   │   │   │   │   │   │   ├── bson.md
+│   │   │   │   │   │   │   ├── cbor.md
+│   │   │   │   │   │   │   ├── index.md
+│   │   │   │   │   │   │   ├── messagepack.md
+│   │   │   │   │   │   │   └── ubjson.md
+│   │   │   │   │   │   ├── binary_values.md
+│   │   │   │   │   │   ├── comments.md
+│   │   │   │   │   │   ├── element_access
+│   │   │   │   │   │   │   ├── checked_access.md
+│   │   │   │   │   │   │   ├── default_value.md
+│   │   │   │   │   │   │   ├── index.md
+│   │   │   │   │   │   │   └── unchecked_access.md
+│   │   │   │   │   │   ├── enum_conversion.md
+│   │   │   │   │   │   ├── iterators.md
+│   │   │   │   │   │   ├── json_patch.md
+│   │   │   │   │   │   ├── json_pointer.md
+│   │   │   │   │   │   ├── macros.md
+│   │   │   │   │   │   ├── merge_patch.md
+│   │   │   │   │   │   ├── namespace.md
+│   │   │   │   │   │   ├── object_order.md
+│   │   │   │   │   │   ├── parsing
+│   │   │   │   │   │   │   ├── index.md
+│   │   │   │   │   │   │   ├── json_lines.md
+│   │   │   │   │   │   │   ├── parse_exceptions.md
+│   │   │   │   │   │   │   ├── parser_callbacks.md
+│   │   │   │   │   │   │   └── sax_interface.md
+│   │   │   │   │   │   └── types
+│   │   │   │   │   │       ├── index.md
+│   │   │   │   │   │       └── number_handling.md
+│   │   │   │   │   ├── home
+│   │   │   │   │   │   ├── code_of_conduct.md
+│   │   │   │   │   │   ├── design_goals.md
+│   │   │   │   │   │   ├── exceptions.md
+│   │   │   │   │   │   ├── faq.md
+│   │   │   │   │   │   ├── license.md
+│   │   │   │   │   │   ├── releases.md
+│   │   │   │   │   │   └── sponsors.md
+│   │   │   │   │   ├── images
+│   │   │   │   │   │   ├── callback_events.png
+│   │   │   │   │   │   ├── json_syntax_number.png
+│   │   │   │   │   │   ├── range-begin-end.svg
+│   │   │   │   │   │   └── range-rbegin-rend.svg
+│   │   │   │   │   ├── index.md
+│   │   │   │   │   └── integration
+│   │   │   │   │       ├── cmake.md
+│   │   │   │   │       ├── conan
+│   │   │   │   │       │   ├── CMakeLists.txt
+│   │   │   │   │       │   ├── Conanfile.txt
+│   │   │   │   │       │   └── example.cpp
+│   │   │   │   │       ├── example.cpp
+│   │   │   │   │       ├── index.md
+│   │   │   │   │       ├── package_managers.md
+│   │   │   │   │       ├── pkg-config.md
+│   │   │   │   │       └── vcpkg
+│   │   │   │   │           ├── CMakeLists.txt
+│   │   │   │   │           └── example.cpp
+│   │   │   │   ├── mkdocs.yml
+│   │   │   │   ├── requirements.txt
+│   │   │   │   └── scripts
+│   │   │   │       └── check_structure.py
+│   │   │   └── usages
+│   │   │       ├── ios.png
+│   │   │       └── macos.png
+│   │   ├── include
+│   │   │   └── nlohmann
+│   │   │       ├── adl_serializer.hpp
+│   │   │       ├── byte_container_with_subtype.hpp
+│   │   │       ├── detail
+│   │   │       │   ├── abi_macros.hpp
+│   │   │       │   ├── conversions
+│   │   │       │   │   ├── from_json.hpp
+│   │   │       │   │   ├── to_chars.hpp
+│   │   │       │   │   └── to_json.hpp
+│   │   │       │   ├── exceptions.hpp
+│   │   │       │   ├── hash.hpp
+│   │   │       │   ├── input
+│   │   │       │   │   ├── binary_reader.hpp
+│   │   │       │   │   ├── input_adapters.hpp
+│   │   │       │   │   ├── json_sax.hpp
+│   │   │       │   │   ├── lexer.hpp
+│   │   │       │   │   ├── parser.hpp
+│   │   │       │   │   └── position_t.hpp
+│   │   │       │   ├── iterators
+│   │   │       │   │   ├── internal_iterator.hpp
+│   │   │       │   │   ├── iter_impl.hpp
+│   │   │       │   │   ├── iteration_proxy.hpp
+│   │   │       │   │   ├── iterator_traits.hpp
+│   │   │       │   │   ├── json_reverse_iterator.hpp
+│   │   │       │   │   └── primitive_iterator.hpp
+│   │   │       │   ├── json_pointer.hpp
+│   │   │       │   ├── json_ref.hpp
+│   │   │       │   ├── macro_scope.hpp
+│   │   │       │   ├── macro_unscope.hpp
+│   │   │       │   ├── meta
+│   │   │       │   │   ├── call_std
+│   │   │       │   │   │   ├── begin.hpp
+│   │   │       │   │   │   └── end.hpp
+│   │   │       │   │   ├── cpp_future.hpp
+│   │   │       │   │   ├── detected.hpp
+│   │   │       │   │   ├── identity_tag.hpp
+│   │   │       │   │   ├── is_sax.hpp
+│   │   │       │   │   ├── std_fs.hpp
+│   │   │       │   │   ├── type_traits.hpp
+│   │   │       │   │   └── void_t.hpp
+│   │   │       │   ├── output
+│   │   │       │   │   ├── binary_writer.hpp
+│   │   │       │   │   ├── output_adapters.hpp
+│   │   │       │   │   └── serializer.hpp
+│   │   │       │   ├── string_concat.hpp
+│   │   │       │   ├── string_escape.hpp
+│   │   │       │   └── value_t.hpp
+│   │   │       ├── json.hpp
+│   │   │       ├── json_fwd.hpp
+│   │   │       ├── ordered_map.hpp
+│   │   │       └── thirdparty
+│   │   │           └── hedley
+│   │   │               ├── hedley.hpp
+│   │   │               └── hedley_undef.hpp
+│   │   ├── meson.build
+│   │   ├── nlohmann_json.natvis
+│   │   ├── single_include
+│   │   │   └── nlohmann
+│   │   │       ├── json.hpp
+│   │   │       └── json_fwd.hpp
+│   │   ├── tests
+│   │   │   ├── CMakeLists.txt
+│   │   │   ├── Makefile
+│   │   │   ├── abi
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   ├── config
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── config.hpp
+│   │   │   │   │   ├── custom.cpp
+│   │   │   │   │   ├── default.cpp
+│   │   │   │   │   └── noversion.cpp
+│   │   │   │   ├── diag
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── diag.cpp
+│   │   │   │   │   ├── diag.hpp
+│   │   │   │   │   ├── diag_off.cpp
+│   │   │   │   │   └── diag_on.cpp
+│   │   │   │   ├── include
+│   │   │   │   │   └── nlohmann
+│   │   │   │   │       └── json_v3_10_5.hpp
+│   │   │   │   ├── inline_ns
+│   │   │   │   │   ├── CMakeLists.txt
+│   │   │   │   │   ├── use_current.cpp
+│   │   │   │   │   └── use_v3_10_5.cpp
+│   │   │   │   └── main.cpp
+│   │   │   ├── benchmarks
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── src
+│   │   │   │       └── benchmarks.cpp
+│   │   │   ├── cmake_add_subdirectory
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── project
+│   │   │   │       ├── CMakeLists.txt
+│   │   │   │       └── main.cpp
+│   │   │   ├── cmake_fetch_content
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── project
+│   │   │   │       ├── CMakeLists.txt
+│   │   │   │       └── main.cpp
+│   │   │   ├── cmake_fetch_content2
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── project
+│   │   │   │       ├── CMakeLists.txt
+│   │   │   │       └── main.cpp
+│   │   │   ├── cmake_import
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── project
+│   │   │   │       ├── CMakeLists.txt
+│   │   │   │       └── main.cpp
+│   │   │   ├── cmake_import_minver
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── project
+│   │   │   │       ├── CMakeLists.txt
+│   │   │   │       └── main.cpp
+│   │   │   ├── cmake_target_include_directories
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── project
+│   │   │   │       ├── Bar.cpp
+│   │   │   │       ├── Bar.hpp
+│   │   │   │       ├── CMakeLists.txt
+│   │   │   │       ├── Foo.cpp
+│   │   │   │       ├── Foo.hpp
+│   │   │   │       └── main.cpp
+│   │   │   ├── cuda_example
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── json_cuda.cu
+│   │   │   ├── fuzzing.md
+│   │   │   ├── reports
+│   │   │   │   ├── 2016-08-29-fuzz
+│   │   │   │   │   ├── exec_speed.png
+│   │   │   │   │   ├── fuzz.tiff
+│   │   │   │   │   ├── high_freq.png
+│   │   │   │   │   ├── index.html
+│   │   │   │   │   └── low_freq.png
+│   │   │   │   ├── 2016-09-09-nativejson_benchmark
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   ├── conformance_Nlohmann (C++11).md
+│   │   │   │   │   ├── conformance_overall_Result.png
+│   │   │   │   │   ├── performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_1._Parse_Memory_(byte).png
+│   │   │   │   │   ├── performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_1._Parse_Time_(ms).png
+│   │   │   │   │   ├── performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_2._Stringify_Time_(ms).png
+│   │   │   │   │   ├── performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_3._Prettify_Time_(ms).png
+│   │   │   │   │   └── performance_Corei7-4980HQ@2.80GHz_mac64_clang7.0_7._Code_size_FileSize_(byte).png
+│   │   │   │   └── 2016-10-02-fuzz
+│   │   │   │       ├── exec_speed.png
+│   │   │   │       ├── fuzz.tiff
+│   │   │   │       ├── high_freq.png
+│   │   │   │       ├── index.html
+│   │   │   │       └── low_freq.png
+│   │   │   ├── src
+│   │   │   │   ├── fuzzer-driver_afl.cpp
+│   │   │   │   ├── fuzzer-parse_bjdata.cpp
+│   │   │   │   ├── fuzzer-parse_bson.cpp
+│   │   │   │   ├── fuzzer-parse_cbor.cpp
+│   │   │   │   ├── fuzzer-parse_json.cpp
+│   │   │   │   ├── fuzzer-parse_msgpack.cpp
+│   │   │   │   ├── fuzzer-parse_ubjson.cpp
+│   │   │   │   ├── make_test_data_available.hpp
+│   │   │   │   ├── test_utils.hpp
+│   │   │   │   ├── unit-32bit.cpp
+│   │   │   │   ├── unit-algorithms.cpp
+│   │   │   │   ├── unit-allocator.cpp
+│   │   │   │   ├── unit-alt-string.cpp
+│   │   │   │   ├── unit-assert_macro.cpp
+│   │   │   │   ├── unit-binary_formats.cpp
+│   │   │   │   ├── unit-bjdata.cpp
+│   │   │   │   ├── unit-bson.cpp
+│   │   │   │   ├── unit-byte_container_with_subtype.cpp
+│   │   │   │   ├── unit-capacity.cpp
+│   │   │   │   ├── unit-cbor.cpp
+│   │   │   │   ├── unit-class_const_iterator.cpp
+│   │   │   │   ├── unit-class_iterator.cpp
+│   │   │   │   ├── unit-class_lexer.cpp
+│   │   │   │   ├── unit-class_parser.cpp
+│   │   │   │   ├── unit-comparison.cpp
+│   │   │   │   ├── unit-concepts.cpp
+│   │   │   │   ├── unit-constructor1.cpp
+│   │   │   │   ├── unit-constructor2.cpp
+│   │   │   │   ├── unit-convenience.cpp
+│   │   │   │   ├── unit-conversions.cpp
+│   │   │   │   ├── unit-deserialization.cpp
+│   │   │   │   ├── unit-diagnostics.cpp
+│   │   │   │   ├── unit-disabled_exceptions.cpp
+│   │   │   │   ├── unit-element_access1.cpp
+│   │   │   │   ├── unit-element_access2.cpp
+│   │   │   │   ├── unit-hash.cpp
+│   │   │   │   ├── unit-inspection.cpp
+│   │   │   │   ├── unit-items.cpp
+│   │   │   │   ├── unit-iterators1.cpp
+│   │   │   │   ├── unit-iterators2.cpp
+│   │   │   │   ├── unit-json_patch.cpp
+│   │   │   │   ├── unit-json_pointer.cpp
+│   │   │   │   ├── unit-large_json.cpp
+│   │   │   │   ├── unit-merge_patch.cpp
+│   │   │   │   ├── unit-meta.cpp
+│   │   │   │   ├── unit-modifiers.cpp
+│   │   │   │   ├── unit-msgpack.cpp
+│   │   │   │   ├── unit-noexcept.cpp
+│   │   │   │   ├── unit-ordered_json.cpp
+│   │   │   │   ├── unit-ordered_map.cpp
+│   │   │   │   ├── unit-pointer_access.cpp
+│   │   │   │   ├── unit-readme.cpp
+│   │   │   │   ├── unit-reference_access.cpp
+│   │   │   │   ├── unit-regression1.cpp
+│   │   │   │   ├── unit-regression2.cpp
+│   │   │   │   ├── unit-serialization.cpp
+│   │   │   │   ├── unit-testsuites.cpp
+│   │   │   │   ├── unit-to_chars.cpp
+│   │   │   │   ├── unit-type_traits.cpp
+│   │   │   │   ├── unit-ubjson.cpp
+│   │   │   │   ├── unit-udl.cpp
+│   │   │   │   ├── unit-udt.cpp
+│   │   │   │   ├── unit-udt_macro.cpp
+│   │   │   │   ├── unit-unicode1.cpp
+│   │   │   │   ├── unit-unicode2.cpp
+│   │   │   │   ├── unit-unicode3.cpp
+│   │   │   │   ├── unit-unicode4.cpp
+│   │   │   │   ├── unit-unicode5.cpp
+│   │   │   │   ├── unit-user_defined_input.cpp
+│   │   │   │   ├── unit-windows_h.cpp
+│   │   │   │   ├── unit-wstring.cpp
+│   │   │   │   └── unit.cpp
+│   │   │   └── thirdparty
+│   │   │       ├── Fuzzer
+│   │   │       │   ├── CMakeLists.txt
+│   │   │       │   ├── FuzzerCorpus.h
+│   │   │       │   ├── FuzzerCrossOver.cpp
+│   │   │       │   ├── FuzzerDefs.h
+│   │   │       │   ├── FuzzerDictionary.h
+│   │   │       │   ├── FuzzerDriver.cpp
+│   │   │       │   ├── FuzzerExtFunctions.def
+│   │   │       │   ├── FuzzerExtFunctions.h
+│   │   │       │   ├── FuzzerExtFunctionsDlsym.cpp
+│   │   │       │   ├── FuzzerExtFunctionsWeak.cpp
+│   │   │       │   ├── FuzzerExtFunctionsWeakAlias.cpp
+│   │   │       │   ├── FuzzerFlags.def
+│   │   │       │   ├── FuzzerIO.cpp
+│   │   │       │   ├── FuzzerIO.h
+│   │   │       │   ├── FuzzerIOPosix.cpp
+│   │   │       │   ├── FuzzerIOWindows.cpp
+│   │   │       │   ├── FuzzerInterface.h
+│   │   │       │   ├── FuzzerInternal.h
+│   │   │       │   ├── FuzzerLoop.cpp
+│   │   │       │   ├── FuzzerMain.cpp
+│   │   │       │   ├── FuzzerMerge.cpp
+│   │   │       │   ├── FuzzerMerge.h
+│   │   │       │   ├── FuzzerMutate.cpp
+│   │   │       │   ├── FuzzerMutate.h
+│   │   │       │   ├── FuzzerOptions.h
+│   │   │       │   ├── FuzzerRandom.h
+│   │   │       │   ├── FuzzerSHA1.cpp
+│   │   │       │   ├── FuzzerSHA1.h
+│   │   │       │   ├── FuzzerTracePC.cpp
+│   │   │       │   ├── FuzzerTracePC.h
+│   │   │       │   ├── FuzzerTraceState.cpp
+│   │   │       │   ├── FuzzerUtil.cpp
+│   │   │       │   ├── FuzzerUtil.h
+│   │   │       │   ├── FuzzerUtilDarwin.cpp
+│   │   │       │   ├── FuzzerUtilLinux.cpp
+│   │   │       │   ├── FuzzerUtilPosix.cpp
+│   │   │       │   ├── FuzzerUtilWindows.cpp
+│   │   │       │   ├── FuzzerValueBitMap.h
+│   │   │       │   ├── README.txt
+│   │   │       │   ├── afl
+│   │   │       │   │   └── afl_driver.cpp
+│   │   │       │   ├── build.sh
+│   │   │       │   ├── cxx.dict
+│   │   │       │   ├── standalone
+│   │   │       │   │   └── StandaloneFuzzTargetMain.c
+│   │   │       │   └── test
+│   │   │       │       ├── AFLDriverTest.cpp
+│   │   │       │       ├── AbsNegAndConstant64Test.cpp
+│   │   │       │       ├── AbsNegAndConstantTest.cpp
+│   │   │       │       ├── AccumulateAllocationsTest.cpp
+│   │   │       │       ├── BufferOverflowOnInput.cpp
+│   │   │       │       ├── CMakeLists.txt
+│   │   │       │       ├── CallerCalleeTest.cpp
+│   │   │       │       ├── CounterTest.cpp
+│   │   │       │       ├── CustomCrossOverTest.cpp
+│   │   │       │       ├── CustomMutatorTest.cpp
+│   │   │       │       ├── DSO1.cpp
+│   │   │       │       ├── DSO2.cpp
+│   │   │       │       ├── DSOTestExtra.cpp
+│   │   │       │       ├── DSOTestMain.cpp
+│   │   │       │       ├── DivTest.cpp
+│   │   │       │       ├── EmptyTest.cpp
+│   │   │       │       ├── FourIndependentBranchesTest.cpp
+│   │   │       │       ├── FullCoverageSetTest.cpp
+│   │   │       │       ├── FuzzerUnittest.cpp
+│   │   │       │       ├── InitializeTest.cpp
+│   │   │       │       ├── LeakTest.cpp
+│   │   │       │       ├── LeakTimeoutTest.cpp
+│   │   │       │       ├── LoadTest.cpp
+│   │   │       │       ├── MemcmpTest.cpp
+│   │   │       │       ├── NthRunCrashTest.cpp
+│   │   │       │       ├── NullDerefOnEmptyTest.cpp
+│   │   │       │       ├── NullDerefTest.cpp
+│   │   │       │       ├── OneHugeAllocTest.cpp
+│   │   │       │       ├── OutOfMemorySingleLargeMallocTest.cpp
+│   │   │       │       ├── OutOfMemoryTest.cpp
+│   │   │       │       ├── RepeatedBytesTest.cpp
+│   │   │       │       ├── RepeatedMemcmp.cpp
+│   │   │       │       ├── ShrinkControlFlowTest.cpp
+│   │   │       │       ├── ShrinkValueProfileTest.cpp
+│   │   │       │       ├── SignedIntOverflowTest.cpp
+│   │   │       │       ├── SimpleCmpTest.cpp
+│   │   │       │       ├── SimpleDictionaryTest.cpp
+│   │   │       │       ├── SimpleHashTest.cpp
+│   │   │       │       ├── SimpleTest.cpp
+│   │   │       │       ├── SimpleThreadedTest.cpp
+│   │   │       │       ├── SingleMemcmpTest.cpp
+│   │   │       │       ├── SingleStrcmpTest.cpp
+│   │   │       │       ├── SingleStrncmpTest.cpp
+│   │   │       │       ├── SpamyTest.cpp
+│   │   │       │       ├── StrcmpTest.cpp
+│   │   │       │       ├── StrncmpOOBTest.cpp
+│   │   │       │       ├── StrncmpTest.cpp
+│   │   │       │       ├── StrstrTest.cpp
+│   │   │       │       ├── SwapCmpTest.cpp
+│   │   │       │       ├── Switch2Test.cpp
+│   │   │       │       ├── SwitchTest.cpp
+│   │   │       │       ├── ThreadedLeakTest.cpp
+│   │   │       │       ├── ThreadedTest.cpp
+│   │   │       │       ├── TimeoutEmptyTest.cpp
+│   │   │       │       ├── TimeoutTest.cpp
+│   │   │       │       ├── TraceMallocTest.cpp
+│   │   │       │       ├── UninstrumentedTest.cpp
+│   │   │       │       ├── afl-driver-extra-stats.test
+│   │   │       │       ├── afl-driver-stderr.test
+│   │   │       │       ├── caller-callee.test
+│   │   │       │       ├── coverage.test
+│   │   │       │       ├── dict1.txt
+│   │   │       │       ├── dump_coverage.test
+│   │   │       │       ├── fuzzer-customcrossover.test
+│   │   │       │       ├── fuzzer-custommutator.test
+│   │   │       │       ├── fuzzer-dict.test
+│   │   │       │       ├── fuzzer-dirs.test
+│   │   │       │       ├── fuzzer-fdmask.test
+│   │   │       │       ├── fuzzer-finalstats.test
+│   │   │       │       ├── fuzzer-flags.test
+│   │   │       │       ├── fuzzer-jobs.test
+│   │   │       │       ├── fuzzer-leak.test
+│   │   │       │       ├── fuzzer-oom-with-profile.test
+│   │   │       │       ├── fuzzer-oom.test
+│   │   │       │       ├── fuzzer-printcovpcs.test
+│   │   │       │       ├── fuzzer-runs.test
+│   │   │       │       ├── fuzzer-seed.test
+│   │   │       │       ├── fuzzer-segv.test
+│   │   │       │       ├── fuzzer-singleinputs.test
+│   │   │       │       ├── fuzzer-threaded.test
+│   │   │       │       ├── fuzzer-timeout.test
+│   │   │       │       ├── fuzzer-traces-hooks.test
+│   │   │       │       ├── fuzzer-ubsan.test
+│   │   │       │       ├── fuzzer.test
+│   │   │       │       ├── hi.txt
+│   │   │       │       ├── lit.cfg
+│   │   │       │       ├── lit.site.cfg.in
+│   │   │       │       ├── merge.test
+│   │   │       │       ├── minimize_crash.test
+│   │   │       │       ├── no-coverage
+│   │   │       │       │   └── CMakeLists.txt
+│   │   │       │       ├── repeated-bytes.test
+│   │   │       │       ├── shrink.test
+│   │   │       │       ├── simple-cmp.test
+│   │   │       │       ├── standalone.test
+│   │   │       │       ├── swap-cmp.test
+│   │   │       │       ├── trace-malloc.test
+│   │   │       │       ├── ubsan
+│   │   │       │       │   └── CMakeLists.txt
+│   │   │       │       ├── ulimit.test
+│   │   │       │       ├── uninstrumented
+│   │   │       │       │   └── CMakeLists.txt
+│   │   │       │       ├── unit
+│   │   │       │       │   ├── lit.cfg
+│   │   │       │       │   └── lit.site.cfg.in
+│   │   │       │       ├── value-profile-cmp.test
+│   │   │       │       ├── value-profile-cmp2.test
+│   │   │       │       ├── value-profile-cmp3.test
+│   │   │       │       ├── value-profile-cmp4.test
+│   │   │       │       ├── value-profile-div.test
+│   │   │       │       ├── value-profile-load.test
+│   │   │       │       ├── value-profile-mem.test
+│   │   │       │       ├── value-profile-set.test
+│   │   │       │       ├── value-profile-strcmp.test
+│   │   │       │       ├── value-profile-strncmp.test
+│   │   │       │       └── value-profile-switch.test
+│   │   │       ├── doctest
+│   │   │       │   ├── doctest.h
+│   │   │       │   └── doctest_compatibility.h
+│   │   │       ├── fifo_map
+│   │   │       │   └── fifo_map.hpp
+│   │   │       └── imapdl
+│   │   │           └── filterbr.py
+│   │   ├── tools
+│   │   │   ├── amalgamate
+│   │   │   │   ├── CHANGES.md
+│   │   │   │   ├── README.md
+│   │   │   │   ├── amalgamate.py
+│   │   │   │   ├── config_json.json
+│   │   │   │   └── config_json_fwd.json
+│   │   │   ├── cpplint
+│   │   │   │   ├── README.rst
+│   │   │   │   ├── cpplint.py
+│   │   │   │   └── update.sh
+│   │   │   ├── gdb_pretty_printer
+│   │   │   │   ├── README.md
+│   │   │   │   └── nlohmann-json.py
+│   │   │   ├── generate_natvis
+│   │   │   │   ├── README.md
+│   │   │   │   ├── generate_natvis.py
+│   │   │   │   └── nlohmann_json.natvis.j2
+│   │   │   ├── macro_builder
+│   │   │   │   └── main.cpp
+│   │   │   └── serve_header
+│   │   │       ├── README.md
+│   │   │       ├── demo.png
+│   │   │       ├── requirements.txt
+│   │   │       ├── serve_header.py
+│   │   │       └── serve_header.yml.example
+│   │   └── wsjcpp.yml
+│   ├── kaldi
+│   │   ├── CMakeLists.txt
+│   │   ├── base
+│   │   │   ├── Makefile
+│   │   │   ├── get_version.sh
+│   │   │   ├── io-funcs-inl.h
+│   │   │   ├── io-funcs-test.cc
+│   │   │   ├── io-funcs.cc
+│   │   │   ├── io-funcs.h
+│   │   │   ├── kaldi-common.h
+│   │   │   ├── kaldi-error-test.cc
+│   │   │   ├── kaldi-error.cc
+│   │   │   ├── kaldi-error.h
+│   │   │   ├── kaldi-math-test.cc
+│   │   │   ├── kaldi-math.cc
+│   │   │   ├── kaldi-math.h
+│   │   │   ├── kaldi-types.h
+│   │   │   ├── kaldi-utils.cc
+│   │   │   ├── kaldi-utils.h
+│   │   │   ├── timer-test.cc
+│   │   │   ├── timer.cc
+│   │   │   └── timer.h
+│   │   ├── decoder
+│   │   │   ├── Makefile
+│   │   │   ├── biglm-faster-decoder.h
+│   │   │   ├── decodable-mapped.h
+│   │   │   ├── decodable-matrix.cc
+│   │   │   ├── decodable-matrix.h
+│   │   │   ├── decodable-sum.h
+│   │   │   ├── decoder-wrappers.cc
+│   │   │   ├── decoder-wrappers.h
+│   │   │   ├── faster-decoder.cc
+│   │   │   ├── faster-decoder.h
+│   │   │   ├── lattice-biglm-faster-decoder.h
+│   │   │   ├── lattice-faster-decoder.cc
+│   │   │   ├── lattice-faster-decoder.h
+│   │   │   ├── lattice-faster-online-decoder.cc
+│   │   │   ├── lattice-faster-online-decoder.h
+│   │   │   ├── lattice-incremental-decoder.cc
+│   │   │   ├── lattice-incremental-decoder.h
+│   │   │   ├── lattice-incremental-online-decoder.cc
+│   │   │   ├── lattice-incremental-online-decoder.h
+│   │   │   ├── lattice-simple-decoder.cc
+│   │   │   ├── lattice-simple-decoder.h
+│   │   │   ├── simple-decoder.cc
+│   │   │   ├── simple-decoder.h
+│   │   │   ├── training-graph-compiler.cc
+│   │   │   └── training-graph-compiler.h
+│   │   ├── fstbin
+│   │   │   ├── Makefile
+│   │   │   ├── fstaddselfloops.cc
+│   │   │   ├── fstaddsubsequentialloop.cc
+│   │   │   ├── fstcomposecontext.cc
+│   │   │   ├── fstcopy.cc
+│   │   │   ├── fstdeterminizelog.cc
+│   │   │   ├── fstdeterminizestar.cc
+│   │   │   ├── fstisstochastic.cc
+│   │   │   ├── fstmakecontextfst.cc
+│   │   │   ├── fstmakecontextsyms.cc
+│   │   │   ├── fstminimizeencoded.cc
+│   │   │   ├── fstphicompose.cc
+│   │   │   ├── fstpushspecial.cc
+│   │   │   ├── fstrand.cc
+│   │   │   ├── fstrmepslocal.cc
+│   │   │   ├── fstrmsymbols.cc
+│   │   │   ├── fsts-concat.cc
+│   │   │   ├── fsts-project.cc
+│   │   │   ├── fsts-to-transcripts.cc
+│   │   │   ├── fsts-union.cc
+│   │   │   ├── fsttablecompose.cc
+│   │   │   └── make-grammar-fst.cc
+│   │   ├── fstext
+│   │   │   ├── Makefile
+│   │   │   ├── context-fst-test.cc
+│   │   │   ├── context-fst.cc
+│   │   │   ├── context-fst.h
+│   │   │   ├── deterministic-fst-inl.h
+│   │   │   ├── deterministic-fst-test.cc
+│   │   │   ├── deterministic-fst.h
+│   │   │   ├── determinize-lattice-inl.h
+│   │   │   ├── determinize-lattice-test.cc
+│   │   │   ├── determinize-lattice.h
+│   │   │   ├── determinize-star-inl.h
+│   │   │   ├── determinize-star-test.cc
+│   │   │   ├── determinize-star.h
+│   │   │   ├── epsilon-property-inl.h
+│   │   │   ├── epsilon-property-test.cc
+│   │   │   ├── epsilon-property.h
+│   │   │   ├── factor-inl.h
+│   │   │   ├── factor-test.cc
+│   │   │   ├── factor.h
+│   │   │   ├── fst-test-utils.h
+│   │   │   ├── fstext-lib.h
+│   │   │   ├── fstext-utils-inl.h
+│   │   │   ├── fstext-utils-test.cc
+│   │   │   ├── fstext-utils.h
+│   │   │   ├── grammar-context-fst.cc
+│   │   │   ├── grammar-context-fst.h
+│   │   │   ├── kaldi-fst-io-inl.h
+│   │   │   ├── kaldi-fst-io.cc
+│   │   │   ├── kaldi-fst-io.h
+│   │   │   ├── lattice-utils-inl.h
+│   │   │   ├── lattice-utils-test.cc
+│   │   │   ├── lattice-utils.h
+│   │   │   ├── lattice-weight-test.cc
+│   │   │   ├── lattice-weight.h
+│   │   │   ├── pre-determinize-inl.h
+│   │   │   ├── pre-determinize-test.cc
+│   │   │   ├── pre-determinize.h
+│   │   │   ├── prune-special-inl.h
+│   │   │   ├── prune-special-test.cc
+│   │   │   ├── prune-special.h
+│   │   │   ├── push-special-test.cc
+│   │   │   ├── push-special.cc
+│   │   │   ├── push-special.h
+│   │   │   ├── rand-fst.h
+│   │   │   ├── remove-eps-local-inl.h
+│   │   │   ├── remove-eps-local-test.cc
+│   │   │   ├── remove-eps-local.h
+│   │   │   ├── table-matcher-test.cc
+│   │   │   ├── table-matcher.h
+│   │   │   ├── trivial-factor-weight-test.cc
+│   │   │   └── trivial-factor-weight.h
+│   │   ├── itf
+│   │   │   ├── clusterable-itf.h
+│   │   │   ├── context-dep-itf.h
+│   │   │   ├── decodable-itf.h
+│   │   │   ├── online-feature-itf.h
+│   │   │   ├── optimizable-itf.h
+│   │   │   ├── options-itf.h
+│   │   │   └── transition-information.h
+│   │   ├── lat
+│   │   │   ├── Makefile
+│   │   │   ├── arctic-weight.h
+│   │   │   ├── compose-lattice-pruned.cc
+│   │   │   ├── compose-lattice-pruned.h
+│   │   │   ├── confidence.cc
+│   │   │   ├── confidence.h
+│   │   │   ├── determinize-lattice-pruned-test.cc
+│   │   │   ├── determinize-lattice-pruned.cc
+│   │   │   ├── determinize-lattice-pruned.h
+│   │   │   ├── kaldi-lattice-test.cc
+│   │   │   ├── kaldi-lattice.cc
+│   │   │   ├── kaldi-lattice.h
+│   │   │   ├── lattice-functions-transition-model.cc
+│   │   │   ├── lattice-functions-transition-model.h
+│   │   │   ├── lattice-functions.cc
+│   │   │   ├── lattice-functions.h
+│   │   │   ├── phone-align-lattice.cc
+│   │   │   ├── phone-align-lattice.h
+│   │   │   ├── push-lattice-test.cc
+│   │   │   ├── push-lattice.cc
+│   │   │   ├── push-lattice.h
+│   │   │   ├── sausages.cc
+│   │   │   ├── sausages.h
+│   │   │   ├── word-align-lattice-lexicon-test.cc
+│   │   │   ├── word-align-lattice-lexicon.cc
+│   │   │   ├── word-align-lattice-lexicon.h
+│   │   │   ├── word-align-lattice.cc
+│   │   │   └── word-align-lattice.h
+│   │   ├── lm
+│   │   │   ├── Makefile
+│   │   │   ├── README
+│   │   │   ├── arpa-file-parser-test.cc
+│   │   │   ├── arpa-file-parser.cc
+│   │   │   ├── arpa-file-parser.h
+│   │   │   ├── arpa-lm-compiler-test.cc
+│   │   │   ├── arpa-lm-compiler.cc
+│   │   │   ├── arpa-lm-compiler.h
+│   │   │   ├── const-arpa-lm.cc
+│   │   │   ├── const-arpa-lm.h
+│   │   │   ├── examples
+│   │   │   │   ├── CREATURE.txt
+│   │   │   │   ├── DAYOFMONTH.txt
+│   │   │   │   ├── MONTH.txt
+│   │   │   │   ├── YEAR.txt
+│   │   │   │   ├── YEARDATE.txt
+│   │   │   │   ├── input3.fst
+│   │   │   │   ├── input3.txt
+│   │   │   │   ├── input4.fst
+│   │   │   │   └── input4.txt
+│   │   │   ├── irstlm.mk
+│   │   │   ├── kaldi-rnnlm.cc
+│   │   │   ├── kaldi-rnnlm.h
+│   │   │   ├── kenlm-test.cc
+│   │   │   ├── kenlm.cc
+│   │   │   ├── kenlm.h
+│   │   │   ├── mikolov-rnnlm-lib.cc
+│   │   │   ├── mikolov-rnnlm-lib.h
+│   │   │   └── test_data
+│   │   │       ├── input.arpa
+│   │   │       ├── missing_backoffs.arpa
+│   │   │       ├── missing_bos.arpa
+│   │   │       └── unused_backoffs.arpa
+│   │   ├── lmbin
+│   │   │   ├── Makefile
+│   │   │   ├── arpa-to-const-arpa.cc
+│   │   │   └── arpa2fst.cc
+│   │   └── util
+│   │       ├── Makefile
+│   │       ├── basic-filebuf.h
+│   │       ├── const-integer-set-inl.h
+│   │       ├── const-integer-set-test.cc
+│   │       ├── const-integer-set.h
+│   │       ├── edit-distance-inl.h
+│   │       ├── edit-distance-test.cc
+│   │       ├── edit-distance.h
+│   │       ├── hash-list-inl.h
+│   │       ├── hash-list-test.cc
+│   │       ├── hash-list.h
+│   │       ├── kaldi-cygwin-io-inl.h
+│   │       ├── kaldi-io-inl.h
+│   │       ├── kaldi-io-test.cc
+│   │       ├── kaldi-io.cc
+│   │       ├── kaldi-io.h
+│   │       ├── kaldi-pipebuf.h
+│   │       ├── kaldi-semaphore.cc
+│   │       ├── kaldi-semaphore.h
+│   │       ├── kaldi-thread-test.cc
+│   │       ├── kaldi-thread.cc
+│   │       ├── kaldi-thread.h
+│   │       ├── parse-options-test.cc
+│   │       ├── parse-options.cc
+│   │       ├── parse-options.h
+│   │       ├── simple-io-funcs.cc
+│   │       ├── simple-io-funcs.h
+│   │       ├── simple-options-test.cc
+│   │       ├── simple-options.cc
+│   │       ├── simple-options.h
+│   │       ├── stl-utils-test.cc
+│   │       ├── stl-utils.h
+│   │       ├── table-types.h
+│   │       ├── text-utils-test.cc
+│   │       ├── text-utils.cc
+│   │       └── text-utils.h
+│   ├── kaldi-native-fbank
+│   │   ├── CMakeLists.txt
+│   │   ├── cmake
+│   │   │   ├── Modules
+│   │   │   │   ├── FetchContent
+│   │   │   │   │   └── CMakeLists.cmake.in
+│   │   │   │   ├── FetchContent.cmake
+│   │   │   │   └── README.md
+│   │   │   ├── cmake_extension.py
+│   │   │   ├── googletest.cmake
+│   │   │   └── pybind11.cmake
+│   │   └── kaldi-native-fbank
+│   │       ├── CMakeLists.txt
+│   │       └── csrc
+│   │           ├── CMakeLists.txt
+│   │           ├── CMakeLists.txt.bak
+│   │           ├── feature-fbank.cc
+│   │           ├── feature-fbank.h
+│   │           ├── feature-functions.cc
+│   │           ├── feature-functions.h
+│   │           ├── feature-window.cc
+│   │           ├── feature-window.h
+│   │           ├── fftsg.c
+│   │           ├── log.cc
+│   │           ├── log.h
+│   │           ├── mel-computations.cc
+│   │           ├── mel-computations.h
+│   │           ├── online-feature.cc
+│   │           ├── online-feature.h
+│   │           ├── rfft.cc
+│   │           ├── rfft.h
+│   │           ├── test-log.cc
+│   │           ├── test-online-fbank.cc
+│   │           ├── test-online-feature.cc
+│   │           └── test-rfft.cc
+│   ├── openfst
+│   │   ├── BUILD.bazel
+│   │   ├── CMakeLists.txt
+│   │   ├── Makefile.am
+│   │   ├── Makefile.in
+│   │   ├── README.md
+│   │   ├── _import_release.sh
+│   │   ├── _package_release.cmd
+│   │   ├── aclocal.m4
+│   │   ├── config.guess
+│   │   ├── config.h.in
+│   │   ├── config.sub
+│   │   ├── configure.ac
+│   │   ├── ltmain.sh
+│   │   ├── m4
+│   │   │   ├── ac_python_devel.m4
+│   │   │   ├── libtool.m4
+│   │   │   ├── ltoptions.m4
+│   │   │   ├── ltsugar.m4
+│   │   │   ├── ltversion.m4
+│   │   │   └── lt~obsolete.m4
+│   │   ├── openfst.sln
+│   │   └── src
+│   │       ├── CMakeLists.txt
+│   │       ├── Makefile.am
+│   │       ├── Makefile.in
+│   │       ├── bin
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── Makefile.am
+│   │       │   ├── Makefile.in
+│   │       │   ├── bin.vcxproj
+│   │       │   ├── fstarcsort-main.cc
+│   │       │   ├── fstarcsort.cc
+│   │       │   ├── fstclosure-main.cc
+│   │       │   ├── fstclosure.cc
+│   │       │   ├── fstcompile-main.cc
+│   │       │   ├── fstcompile.cc
+│   │       │   ├── fstcompose-main.cc
+│   │       │   ├── fstcompose.cc
+│   │       │   ├── fstconcat-main.cc
+│   │       │   ├── fstconcat.cc
+│   │       │   ├── fstconnect-main.cc
+│   │       │   ├── fstconnect.cc
+│   │       │   ├── fstconvert-main.cc
+│   │       │   ├── fstconvert.cc
+│   │       │   ├── fstdeterminize-main.cc
+│   │       │   ├── fstdeterminize.cc
+│   │       │   ├── fstdifference-main.cc
+│   │       │   ├── fstdifference.cc
+│   │       │   ├── fstdisambiguate-main.cc
+│   │       │   ├── fstdisambiguate.cc
+│   │       │   ├── fstdraw-main.cc
+│   │       │   ├── fstdraw.cc
+│   │       │   ├── fstencode-main.cc
+│   │       │   ├── fstencode.cc
+│   │       │   ├── fstepsnormalize-main.cc
+│   │       │   ├── fstepsnormalize.cc
+│   │       │   ├── fstequal-main.cc
+│   │       │   ├── fstequal.cc
+│   │       │   ├── fstequivalent-main.cc
+│   │       │   ├── fstequivalent.cc
+│   │       │   ├── fstinfo-main.cc
+│   │       │   ├── fstinfo.cc
+│   │       │   ├── fstintersect-main.cc
+│   │       │   ├── fstintersect.cc
+│   │       │   ├── fstinvert-main.cc
+│   │       │   ├── fstinvert.cc
+│   │       │   ├── fstisomorphic-main.cc
+│   │       │   ├── fstisomorphic.cc
+│   │       │   ├── fstmap-main.cc
+│   │       │   ├── fstmap.cc
+│   │       │   ├── fstminimize-main.cc
+│   │       │   ├── fstminimize.cc
+│   │       │   ├── fstprint-main.cc
+│   │       │   ├── fstprint.cc
+│   │       │   ├── fstproject-main.cc
+│   │       │   ├── fstproject.cc
+│   │       │   ├── fstprune-main.cc
+│   │       │   ├── fstprune.cc
+│   │       │   ├── fstpush-main.cc
+│   │       │   ├── fstpush.cc
+│   │       │   ├── fstrandgen-main.cc
+│   │       │   ├── fstrandgen.cc
+│   │       │   ├── fstrelabel-main.cc
+│   │       │   ├── fstrelabel.cc
+│   │       │   ├── fstreplace-main.cc
+│   │       │   ├── fstreplace.cc
+│   │       │   ├── fstreverse-main.cc
+│   │       │   ├── fstreverse.cc
+│   │       │   ├── fstreweight-main.cc
+│   │       │   ├── fstreweight.cc
+│   │       │   ├── fstrmepsilon-main.cc
+│   │       │   ├── fstrmepsilon.cc
+│   │       │   ├── fstshortestdistance-main.cc
+│   │       │   ├── fstshortestdistance.cc
+│   │       │   ├── fstshortestpath-main.cc
+│   │       │   ├── fstshortestpath.cc
+│   │       │   ├── fstsymbols-main.cc
+│   │       │   ├── fstsymbols.cc
+│   │       │   ├── fstsynchronize-main.cc
+│   │       │   ├── fstsynchronize.cc
+│   │       │   ├── fsttopsort-main.cc
+│   │       │   ├── fsttopsort.cc
+│   │       │   ├── fstunion-main.cc
+│   │       │   └── fstunion.cc
+│   │       ├── extensions
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── Makefile.am
+│   │       │   ├── Makefile.in
+│   │       │   ├── compact
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── Makefile.am
+│   │       │   │   ├── Makefile.in
+│   │       │   │   ├── compact16_acceptor-fst.cc
+│   │       │   │   ├── compact16_string-fst.cc
+│   │       │   │   ├── compact16_unweighted-fst.cc
+│   │       │   │   ├── compact16_unweighted_acceptor-fst.cc
+│   │       │   │   ├── compact16_weighted_string-fst.cc
+│   │       │   │   ├── compact64_acceptor-fst.cc
+│   │       │   │   ├── compact64_string-fst.cc
+│   │       │   │   ├── compact64_unweighted-fst.cc
+│   │       │   │   ├── compact64_unweighted_acceptor-fst.cc
+│   │       │   │   ├── compact64_weighted_string-fst.cc
+│   │       │   │   ├── compact8_acceptor-fst.cc
+│   │       │   │   ├── compact8_string-fst.cc
+│   │       │   │   ├── compact8_unweighted-fst.cc
+│   │       │   │   ├── compact8_unweighted_acceptor-fst.cc
+│   │       │   │   └── compact8_weighted_string-fst.cc
+│   │       │   ├── compress
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── Makefile.am
+│   │       │   │   ├── Makefile.in
+│   │       │   │   ├── compress-script.cc
+│   │       │   │   ├── fstcompress.cc
+│   │       │   │   └── fstrandmod.cc
+│   │       │   ├── const
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── Makefile.am
+│   │       │   │   ├── Makefile.in
+│   │       │   │   ├── const16-fst.cc
+│   │       │   │   ├── const64-fst.cc
+│   │       │   │   └── const8-fst.cc
+│   │       │   ├── far
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── Makefile.am
+│   │       │   │   ├── Makefile.in
+│   │       │   │   ├── far-class.cc
+│   │       │   │   ├── farcompilestrings.cc
+│   │       │   │   ├── farcreate.cc
+│   │       │   │   ├── farequal.cc
+│   │       │   │   ├── farextract.cc
+│   │       │   │   ├── farinfo.cc
+│   │       │   │   ├── farisomorphic.cc
+│   │       │   │   ├── farprintstrings.cc
+│   │       │   │   ├── farscript.cc
+│   │       │   │   ├── getters.cc
+│   │       │   │   ├── script-impl.cc
+│   │       │   │   ├── stlist.cc
+│   │       │   │   ├── strings.cc
+│   │       │   │   └── sttable.cc
+│   │       │   ├── linear
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── Makefile.am
+│   │       │   │   ├── Makefile.in
+│   │       │   │   ├── fstlinear.cc
+│   │       │   │   ├── fstloglinearapply.cc
+│   │       │   │   ├── linear-classifier-fst.cc
+│   │       │   │   ├── linear-tagger-fst.cc
+│   │       │   │   └── linearscript.cc
+│   │       │   ├── lookahead
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── Makefile.am
+│   │       │   │   ├── Makefile.in
+│   │       │   │   ├── arc_lookahead-fst.cc
+│   │       │   │   ├── ilabel_lookahead-fst.cc
+│   │       │   │   └── olabel_lookahead-fst.cc
+│   │       │   ├── mpdt
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── Makefile.am
+│   │       │   │   ├── Makefile.in
+│   │       │   │   ├── mpdtcompose.cc
+│   │       │   │   ├── mpdtexpand.cc
+│   │       │   │   ├── mpdtinfo.cc
+│   │       │   │   ├── mpdtreverse.cc
+│   │       │   │   └── mpdtscript.cc
+│   │       │   ├── ngram
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── Makefile.am
+│   │       │   │   ├── Makefile.in
+│   │       │   │   ├── bitmap-index.cc
+│   │       │   │   ├── ngram-fst.cc
+│   │       │   │   └── nthbit.cc
+│   │       │   ├── pdt
+│   │       │   │   ├── CMakeLists.txt
+│   │       │   │   ├── Makefile.am
+│   │       │   │   ├── Makefile.in
+│   │       │   │   ├── getters.cc
+│   │       │   │   ├── pdtcompose.cc
+│   │       │   │   ├── pdtexpand.cc
+│   │       │   │   ├── pdtinfo.cc
+│   │       │   │   ├── pdtreplace.cc
+│   │       │   │   ├── pdtreverse.cc
+│   │       │   │   ├── pdtscript.cc
+│   │       │   │   └── pdtshortestpath.cc
+│   │       │   ├── python
+│   │       │   │   ├── Makefile.am
+│   │       │   │   ├── Makefile.in
+│   │       │   │   ├── basictypes.pxd
+│   │       │   │   ├── fst.pxd
+│   │       │   │   ├── ios.pxd
+│   │       │   │   ├── memory.pxd
+│   │       │   │   ├── pywrapfst.cc
+│   │       │   │   ├── pywrapfst.pxd
+│   │       │   │   └── pywrapfst.pyx
+│   │       │   └── special
+│   │       │       ├── CMakeLists.txt
+│   │       │       ├── Makefile.am
+│   │       │       ├── Makefile.in
+│   │       │       ├── fstspecial.cc
+│   │       │       ├── phi-fst.cc
+│   │       │       ├── rho-fst.cc
+│   │       │       └── sigma-fst.cc
+│   │       ├── include
+│   │       │   ├── Makefile.am
+│   │       │   ├── Makefile.in
+│   │       │   └── fst
+│   │       │       ├── accumulator.h
+│   │       │       ├── add-on.h
+│   │       │       ├── arc-arena.h
+│   │       │       ├── arc-map.h
+│   │       │       ├── arc.h
+│   │       │       ├── arcfilter.h
+│   │       │       ├── arcsort.h
+│   │       │       ├── bi-table.h
+│   │       │       ├── cache.h
+│   │       │       ├── closure.h
+│   │       │       ├── compact-fst.h
+│   │       │       ├── compat.h
+│   │       │       ├── complement.h
+│   │       │       ├── compose-filter.h
+│   │       │       ├── compose.h
+│   │       │       ├── concat.h
+│   │       │       ├── config.h
+│   │       │       ├── config.h.in
+│   │       │       ├── connect.h
+│   │       │       ├── const-fst.h
+│   │       │       ├── determinize.h
+│   │       │       ├── dfs-visit.h
+│   │       │       ├── difference.h
+│   │       │       ├── disambiguate.h
+│   │       │       ├── edit-fst.h
+│   │       │       ├── encode.h
+│   │       │       ├── epsnormalize.h
+│   │       │       ├── equal.h
+│   │       │       ├── equivalent.h
+│   │       │       ├── expanded-fst.h
+│   │       │       ├── expectation-weight.h
+│   │       │       ├── extensions
+│   │       │       │   ├── compress
+│   │       │       │   │   ├── compress-script.h
+│   │       │       │   │   ├── compress.h
+│   │       │       │   │   ├── elias.h
+│   │       │       │   │   ├── gzfile.h
+│   │       │       │   │   └── randmod.h
+│   │       │       │   ├── far
+│   │       │       │   │   ├── compile-strings.h
+│   │       │       │   │   ├── create.h
+│   │       │       │   │   ├── equal.h
+│   │       │       │   │   ├── extract.h
+│   │       │       │   │   ├── far-class.h
+│   │       │       │   │   ├── far.h
+│   │       │       │   │   ├── farlib.h
+│   │       │       │   │   ├── farscript.h
+│   │       │       │   │   ├── getters.h
+│   │       │       │   │   ├── info.h
+│   │       │       │   │   ├── isomorphic.h
+│   │       │       │   │   ├── print-strings.h
+│   │       │       │   │   ├── script-impl.h
+│   │       │       │   │   ├── stlist.h
+│   │       │       │   │   └── sttable.h
+│   │       │       │   ├── linear
+│   │       │       │   │   ├── linear-fst-data-builder.h
+│   │       │       │   │   ├── linear-fst-data.h
+│   │       │       │   │   ├── linear-fst.h
+│   │       │       │   │   ├── linearscript.h
+│   │       │       │   │   ├── loglinear-apply.h
+│   │       │       │   │   └── trie.h
+│   │       │       │   ├── mpdt
+│   │       │       │   │   ├── compose.h
+│   │       │       │   │   ├── expand.h
+│   │       │       │   │   ├── info.h
+│   │       │       │   │   ├── mpdt.h
+│   │       │       │   │   ├── mpdtlib.h
+│   │       │       │   │   ├── mpdtscript.h
+│   │       │       │   │   ├── read_write_utils.h
+│   │       │       │   │   └── reverse.h
+│   │       │       │   ├── ngram
+│   │       │       │   │   ├── bitmap-index.h
+│   │       │       │   │   ├── ngram-fst.h
+│   │       │       │   │   └── nthbit.h
+│   │       │       │   ├── pdt
+│   │       │       │   │   ├── collection.h
+│   │       │       │   │   ├── compose.h
+│   │       │       │   │   ├── expand.h
+│   │       │       │   │   ├── getters.h
+│   │       │       │   │   ├── info.h
+│   │       │       │   │   ├── paren.h
+│   │       │       │   │   ├── pdt.h
+│   │       │       │   │   ├── pdtlib.h
+│   │       │       │   │   ├── pdtscript.h
+│   │       │       │   │   ├── replace.h
+│   │       │       │   │   ├── reverse.h
+│   │       │       │   │   └── shortest-path.h
+│   │       │       │   └── special
+│   │       │       │       ├── phi-fst.h
+│   │       │       │       ├── rho-fst.h
+│   │       │       │       └── sigma-fst.h
+│   │       │       ├── factor-weight.h
+│   │       │       ├── filter-state.h
+│   │       │       ├── flags.h
+│   │       │       ├── float-weight.h
+│   │       │       ├── fst-decl.h
+│   │       │       ├── fst.h
+│   │       │       ├── fstlib.h
+│   │       │       ├── generic-register.h
+│   │       │       ├── heap.h
+│   │       │       ├── icu.h
+│   │       │       ├── intersect.h
+│   │       │       ├── interval-set.h
+│   │       │       ├── invert.h
+│   │       │       ├── isomorphic.h
+│   │       │       ├── label-reachable.h
+│   │       │       ├── lexicographic-weight.h
+│   │       │       ├── lock.h
+│   │       │       ├── log.h
+│   │       │       ├── lookahead-filter.h
+│   │       │       ├── lookahead-matcher.h
+│   │       │       ├── map.h
+│   │       │       ├── mapped-file.h
+│   │       │       ├── matcher-fst.h
+│   │       │       ├── matcher.h
+│   │       │       ├── memory.h
+│   │       │       ├── minimize.h
+│   │       │       ├── mutable-fst.h
+│   │       │       ├── pair-weight.h
+│   │       │       ├── partition.h
+│   │       │       ├── power-weight.h
+│   │       │       ├── product-weight.h
+│   │       │       ├── project.h
+│   │       │       ├── properties.h
+│   │       │       ├── prune.h
+│   │       │       ├── push.h
+│   │       │       ├── queue.h
+│   │       │       ├── randequivalent.h
+│   │       │       ├── randgen.h
+│   │       │       ├── rational.h
+│   │       │       ├── register.h
+│   │       │       ├── relabel.h
+│   │       │       ├── replace-util.h
+│   │       │       ├── replace.h
+│   │       │       ├── reverse.h
+│   │       │       ├── reweight.h
+│   │       │       ├── rmepsilon.h
+│   │       │       ├── rmfinalepsilon.h
+│   │       │       ├── script
+│   │       │       │   ├── arc-class.h
+│   │       │       │   ├── arciterator-class.h
+│   │       │       │   ├── arcsort.h
+│   │       │       │   ├── arg-packs.h
+│   │       │       │   ├── closure.h
+│   │       │       │   ├── compile-impl.h
+│   │       │       │   ├── compile.h
+│   │       │       │   ├── compose.h
+│   │       │       │   ├── concat.h
+│   │       │       │   ├── connect.h
+│   │       │       │   ├── convert.h
+│   │       │       │   ├── decode.h
+│   │       │       │   ├── determinize.h
+│   │       │       │   ├── difference.h
+│   │       │       │   ├── disambiguate.h
+│   │       │       │   ├── draw-impl.h
+│   │       │       │   ├── draw.h
+│   │       │       │   ├── encode.h
+│   │       │       │   ├── encodemapper-class.h
+│   │       │       │   ├── epsnormalize.h
+│   │       │       │   ├── equal.h
+│   │       │       │   ├── equivalent.h
+│   │       │       │   ├── fst-class.h
+│   │       │       │   ├── fstscript-decl.h
+│   │       │       │   ├── fstscript.h
+│   │       │       │   ├── getters.h
+│   │       │       │   ├── info-impl.h
+│   │       │       │   ├── info.h
+│   │       │       │   ├── intersect.h
+│   │       │       │   ├── invert.h
+│   │       │       │   ├── isomorphic.h
+│   │       │       │   ├── map.h
+│   │       │       │   ├── minimize.h
+│   │       │       │   ├── print-impl.h
+│   │       │       │   ├── print.h
+│   │       │       │   ├── project.h
+│   │       │       │   ├── prune.h
+│   │       │       │   ├── push.h
+│   │       │       │   ├── randequivalent.h
+│   │       │       │   ├── randgen.h
+│   │       │       │   ├── register.h
+│   │       │       │   ├── relabel.h
+│   │       │       │   ├── replace.h
+│   │       │       │   ├── reverse.h
+│   │       │       │   ├── reweight.h
+│   │       │       │   ├── rmepsilon.h
+│   │       │       │   ├── script-impl.h
+│   │       │       │   ├── shortest-distance.h
+│   │       │       │   ├── shortest-path.h
+│   │       │       │   ├── stateiterator-class.h
+│   │       │       │   ├── synchronize.h
+│   │       │       │   ├── text-io.h
+│   │       │       │   ├── topsort.h
+│   │       │       │   ├── union.h
+│   │       │       │   ├── verify.h
+│   │       │       │   └── weight-class.h
+│   │       │       ├── set-weight.h
+│   │       │       ├── shortest-distance.h
+│   │       │       ├── shortest-path.h
+│   │       │       ├── signed-log-weight.h
+│   │       │       ├── sparse-power-weight.h
+│   │       │       ├── sparse-tuple-weight.h
+│   │       │       ├── state-map.h
+│   │       │       ├── state-reachable.h
+│   │       │       ├── state-table.h
+│   │       │       ├── statesort.h
+│   │       │       ├── string-weight.h
+│   │       │       ├── string.h
+│   │       │       ├── symbol-table-ops.h
+│   │       │       ├── symbol-table.h
+│   │       │       ├── synchronize.h
+│   │       │       ├── test
+│   │       │       │   ├── algo_test.h
+│   │       │       │   ├── fst_test.h
+│   │       │       │   ├── rand-fst.h
+│   │       │       │   └── weight-tester.h
+│   │       │       ├── test-properties.h
+│   │       │       ├── topsort.h
+│   │       │       ├── tuple-weight.h
+│   │       │       ├── types.h
+│   │       │       ├── union-find.h
+│   │       │       ├── union-weight.h
+│   │       │       ├── union.h
+│   │       │       ├── util.h
+│   │       │       ├── vector-fst.h
+│   │       │       ├── verify.h
+│   │       │       ├── visit.h
+│   │       │       └── weight.h
+│   │       ├── lib
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── Makefile.am
+│   │       │   ├── Makefile.in
+│   │       │   ├── compat.cc
+│   │       │   ├── flags.cc
+│   │       │   ├── fst-types.cc
+│   │       │   ├── fst.cc
+│   │       │   ├── libfst.vcxproj
+│   │       │   ├── libfst.vcxproj.filters
+│   │       │   ├── mapped-file.cc
+│   │       │   ├── properties.cc
+│   │       │   ├── symbol-table-ops.cc
+│   │       │   ├── symbol-table.cc
+│   │       │   ├── util.cc
+│   │       │   └── weight.cc
+│   │       ├── openfst-multibin.targets
+│   │       ├── openfst.props
+│   │       ├── openfst.targets
+│   │       ├── openfst.user.props
+│   │       ├── script
+│   │       │   ├── CMakeLists.txt
+│   │       │   ├── Makefile.am
+│   │       │   ├── Makefile.in
+│   │       │   ├── arciterator-class.cc
+│   │       │   ├── arcsort.cc
+│   │       │   ├── closure.cc
+│   │       │   ├── compile.cc
+│   │       │   ├── compose.cc
+│   │       │   ├── concat.cc
+│   │       │   ├── connect.cc
+│   │       │   ├── convert.cc
+│   │       │   ├── decode.cc
+│   │       │   ├── determinize.cc
+│   │       │   ├── difference.cc
+│   │       │   ├── disambiguate.cc
+│   │       │   ├── draw.cc
+│   │       │   ├── encode.cc
+│   │       │   ├── encodemapper-class.cc
+│   │       │   ├── epsnormalize.cc
+│   │       │   ├── equal.cc
+│   │       │   ├── equivalent.cc
+│   │       │   ├── fst-class.cc
+│   │       │   ├── getters.cc
+│   │       │   ├── info-impl.cc
+│   │       │   ├── info.cc
+│   │       │   ├── intersect.cc
+│   │       │   ├── invert.cc
+│   │       │   ├── isomorphic.cc
+│   │       │   ├── libfstscript.vcxproj
+│   │       │   ├── libfstscript.vcxproj.filters
+│   │       │   ├── map.cc
+│   │       │   ├── minimize.cc
+│   │       │   ├── print.cc
+│   │       │   ├── project.cc
+│   │       │   ├── prune.cc
+│   │       │   ├── push.cc
+│   │       │   ├── randequivalent.cc
+│   │       │   ├── randgen.cc
+│   │       │   ├── relabel.cc
+│   │       │   ├── replace.cc
+│   │       │   ├── reverse.cc
+│   │       │   ├── reweight.cc
+│   │       │   ├── rmepsilon.cc
+│   │       │   ├── shortest-distance.cc
+│   │       │   ├── shortest-path.cc
+│   │       │   ├── stateiterator-class.cc
+│   │       │   ├── synchronize.cc
+│   │       │   ├── text-io.cc
+│   │       │   ├── topsort.cc
+│   │       │   ├── union.cc
+│   │       │   ├── verify.cc
+│   │       │   └── weight-class.cc
+│   │       └── test
+│   │           ├── CMakeLists.txt
+│   │           ├── Makefile.am
+│   │           ├── Makefile.in
+│   │           ├── algo_test.cc
+│   │           ├── fst_test.cc
+│   │           └── weight_test.cc
+│   └── yaml-cpp
+│       ├── CMakeLists.txt
+│       ├── include
+│       │   └── yaml-cpp
+│       │       ├── anchor.h
+│       │       ├── binary.h
+│       │       ├── contrib
+│       │       │   ├── anchordict.h
+│       │       │   └── graphbuilder.h
+│       │       ├── dll.h
+│       │       ├── emitfromevents.h
+│       │       ├── emitter.h
+│       │       ├── emitterdef.h
+│       │       ├── emittermanip.h
+│       │       ├── emitterstyle.h
+│       │       ├── eventhandler.h
+│       │       ├── exceptions.h
+│       │       ├── mark.h
+│       │       ├── node
+│       │       │   ├── convert.h
+│       │       │   ├── detail
+│       │       │   │   ├── bool_type.h
+│       │       │   │   ├── impl.h
+│       │       │   │   ├── iterator.h
+│       │       │   │   ├── iterator_fwd.h
+│       │       │   │   ├── memory.h
+│       │       │   │   ├── node.h
+│       │       │   │   ├── node_data.h
+│       │       │   │   ├── node_iterator.h
+│       │       │   │   └── node_ref.h
+│       │       │   ├── emit.h
+│       │       │   ├── impl.h
+│       │       │   ├── iterator.h
+│       │       │   ├── node.h
+│       │       │   ├── parse.h
+│       │       │   ├── ptr.h
+│       │       │   └── type.h
+│       │       ├── noncopyable.h
+│       │       ├── null.h
+│       │       ├── ostream_wrapper.h
+│       │       ├── parser.h
+│       │       ├── stlemitter.h
+│       │       ├── traits.h
+│       │       └── yaml.h
+│       ├── install.txt
+│       ├── src
+│       │   ├── binary.cpp
+│       │   ├── collectionstack.h
+│       │   ├── contrib
+│       │   │   ├── graphbuilder.cpp
+│       │   │   ├── graphbuilderadapter.cpp
+│       │   │   └── graphbuilderadapter.h
+│       │   ├── convert.cpp
+│       │   ├── directives.cpp
+│       │   ├── directives.h
+│       │   ├── emit.cpp
+│       │   ├── emitfromevents.cpp
+│       │   ├── emitter.cpp
+│       │   ├── emitterstate.cpp
+│       │   ├── emitterstate.h
+│       │   ├── emitterutils.cpp
+│       │   ├── emitterutils.h
+│       │   ├── exceptions.cpp
+│       │   ├── exp.cpp
+│       │   ├── exp.h
+│       │   ├── indentation.h
+│       │   ├── memory.cpp
+│       │   ├── node.cpp
+│       │   ├── node_data.cpp
+│       │   ├── nodebuilder.cpp
+│       │   ├── nodebuilder.h
+│       │   ├── nodeevents.cpp
+│       │   ├── nodeevents.h
+│       │   ├── null.cpp
+│       │   ├── ostream_wrapper.cpp
+│       │   ├── parse.cpp
+│       │   ├── parser.cpp
+│       │   ├── ptr_vector.h
+│       │   ├── regex_yaml.cpp
+│       │   ├── regex_yaml.h
+│       │   ├── regeximpl.h
+│       │   ├── scanner.cpp
+│       │   ├── scanner.h
+│       │   ├── scanscalar.cpp
+│       │   ├── scanscalar.h
+│       │   ├── scantag.cpp
+│       │   ├── scantag.h
+│       │   ├── scantoken.cpp
+│       │   ├── setting.h
+│       │   ├── simplekey.cpp
+│       │   ├── singledocparser.cpp
+│       │   ├── singledocparser.h
+│       │   ├── stream.cpp
+│       │   ├── stream.h
+│       │   ├── streamcharsource.h
+│       │   ├── stringsource.h
+│       │   ├── tag.cpp
+│       │   ├── tag.h
+│       │   └── token.h
+│       ├── yaml-cpp-config-version.cmake.in
+│       ├── yaml-cpp-config.cmake.in
+│       └── yaml-cpp.pc.cmake
+└── tmp.log
+
+353 directories, 3746 files
