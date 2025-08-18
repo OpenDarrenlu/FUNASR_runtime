@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.16)
 
 project(FunASROnnx)
 
+option(EN_X86  "Whether to make x86" OFF)
+
 option(ENABLE_GLOG "Whether to build glog" ON)
 option(ENABLE_FST "Whether to build openfst" ON) # ITN need openfst compiled
 option(GPU "Whether to build with GPU" OFF)
@@ -30,6 +32,17 @@ SOURCE_DIR ${PROJECT_SOURCE_DIR}/third_party/json
 FetchContent_MakeAvailable(json)
 endif()
 
+if(EN_X86)
+set(NNCASE_PATH ${CMAKE_SOURCE_DIR}/3rd_party/nncase/x86_64)
+else()
+set(NNCASE_PATH ${CMAKE_SOURCE_DIR}/3rd_party/nncase/riscv64)
+link_directories(${CMAKE_SOURCE_DIR}/3rd_party/mmz/riscv64)
+endif()
+include_directories(${NNCASE_PATH}/include
+                    ${NNCASE_PATH}/include/nncase/runtime
+                    )
+link_directories(${NNCASE_PATH}/lib)
+
 # for onnxruntime
 IF(WIN32)
     file(REMOVE ${PROJECT_SOURCE_DIR}/third_party/glog/src/config.h 
@@ -39,7 +52,12 @@ IF(WIN32)
                 ${PROJECT_SOURCE_DIR}/third_party/glog/src/glog/stl_logging.h 
                 ${PROJECT_SOURCE_DIR}/third_party/glog/src/glog/vlog_is_on.h)
 ELSE()
-    link_directories(/root/onnxruntime/build/Linux/Release)
+    IF(EN_X86)
+        link_directories(${ONNXRUNTIME_DIR}/lib)
+    ELSE()
+        link_directories(/root/onnxruntime/build/Linux/Release)
+    endif()
+
     link_directories(${FFMPEG_DIR}/lib)
 
 endif()
