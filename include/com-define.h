@@ -48,7 +48,8 @@ namespace funasr {
 // #define PUNC_MODEL_PATH "punc-model"
 // #define PUNC_CONFIG_PATH "punc-config"
 
-#define MODEL_NAME "model.onnx"
+#define MODEL_NAME "test.kmodel"
+// #define MODEL_NAME "model.onnx"
 // hotword embedding compile model
 #define MODEL_EB_NAME "model_eb.onnx"
 #define TORCH_MODEL_EB_NAME "model_eb.torchscript"

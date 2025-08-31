@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(FunASROnnx)
+set(CMAKE_CXX_STANDARD 17)            # 设置 C++ 标准（如 11/14/17/20）
+set(CMAKE_CXX_STANDARD_REQUIRED ON)   # 强制要求该标准
 
 option(EN_X86  "Whether to make x86" OFF)
 
@@ -33,13 +35,13 @@ FetchContent_MakeAvailable(json)
 endif()
 
 if(EN_X86)
-set(NNCASE_PATH ${CMAKE_SOURCE_DIR}/3rd_party/nncase/x86_64)
+set(NNCASE_PATH ${CMAKE_SOURCE_DIR}/third_party/nncase/x86_64)
 else()
-set(NNCASE_PATH ${CMAKE_SOURCE_DIR}/3rd_party/nncase/riscv64)
-link_directories(${CMAKE_SOURCE_DIR}/3rd_party/mmz/riscv64)
+set(NNCASE_PATH ${CMAKE_SOURCE_DIR}/third_party/nncase/riscv64)
+link_directories(${CMAKE_SOURCE_DIR}/third_party/mmz/riscv64)
 endif()
+
 include_directories(${NNCASE_PATH}/include
-                    ${NNCASE_PATH}/include/nncase/runtime
                     )
 link_directories(${NNCASE_PATH}/lib)
 
@@ -68,6 +70,7 @@ include_directories(${PROJECT_SOURCE_DIR}/third_party/jieba/include)
 include_directories(${PROJECT_SOURCE_DIR}/third_party/jieba/include/limonp/include)
 include_directories(${PROJECT_SOURCE_DIR}/third_party/kaldi)
 include_directories(${PROJECT_SOURCE_DIR}/third_party/json/include)
+include_directories(${PROJECT_SOURCE_DIR}/third_party/)
 
 if(GPU)
     add_definitions(-DUSE_GPU)

@@ -8,9 +8,11 @@
 
 namespace funasr {
 void FsmnVad::InitVad(const std::string &vad_model, const std::string &vad_cmvn, const std::string &vad_config, int thread_num) {
-    session_options_.SetIntraOpNumThreads(thread_num);
-    session_options_.SetGraphOptimizationLevel(ORT_ENABLE_ALL);
-    session_options_.DisableCpuMemArena();
+    // session_options_.SetIntraOpNumThreads(thread_num);
+    // session_options_.SetGraphOptimizationLevel(ORT_ENABLE_ALL);
+    // session_options_.DisableCpuMemArena();
+    runtime_manager_.reset(new NRT::RuntimeManager());
+
 
     ReadModel(vad_model.c_str());
     LoadCmvn(vad_cmvn.c_str());
@@ -53,15 +55,17 @@ void FsmnVad::LoadConfigFromYaml(const char* filename){
 
 void FsmnVad::ReadModel(const char* vad_model) {
     try {
-        vad_session_ = std::make_shared<Ort::Session>(
-                env_, ORTCHAR(vad_model), session_options_);
+        // vad_session_ = std::make_shared<Ort::Session>(
+        //         env_, ORTCHAR(vad_model), session_options_);
+        std::string model_path(vad_model);
+        module_.reset(new NRT::Module(runtime_manager_, model_path));
         LOG(INFO) << "Successfully load model from " << vad_model;
     } catch (std::exception const &e) {
         LOG(ERROR) << "Error when load vad onnx model: " << e.what();
         exit(-1);
     }
-    GetInputNames(vad_session_.get(), m_strInputNames, vad_in_names_);
-    GetOutputNames(vad_session_.get(), m_strOutputNames, vad_out_names_);
+    // GetInputNames(vad_session_.get(), m_strInputNames, vad_in_names_);
+    // GetOutputNames(vad_session_.get(), m_strOutputNames, vad_out_names_);
 }
 
 void FsmnVad::Forward(
@@ -69,62 +73,104 @@ void FsmnVad::Forward(
         std::vector<std::vector<float>> *out_prob,
         std::vector<std::vector<float>> *in_cache,
         bool is_final) {
-    Ort::MemoryInfo memory_info =
-            Ort::MemoryInfo::CreateCpu(OrtDeviceAllocator, OrtMemTypeCPU);
+    // Ort::MemoryInfo memory_info =
+    //         Ort::MemoryInfo::CreateCpu(OrtDeviceAllocator, OrtMemTypeCPU);
 
     int num_frames = chunk_feats.size();
     const int feature_dim = chunk_feats[0].size();
 
     //  2. Generate input nodes tensor
     // vad node { batch,frame number,feature dim }
-    const int64_t vad_feats_shape[3] = {1, num_frames, feature_dim};
+    // const int64_t vad_feats_shape[3] = {1, num_frames, feature_dim};
+    vector<int32_t> vad_feats_shape = {1, num_frames, feature_dim};
     std::vector<float> vad_feats;
     for (const auto &chunk_feat: chunk_feats) {
         vad_feats.insert(vad_feats.end(), chunk_feat.begin(), chunk_feat.end());
     }
-    Ort::Value vad_feats_ort = Ort::Value::CreateTensor<float>(
-            memory_info, vad_feats.data(), vad_feats.size(), vad_feats_shape, 3);
+    // Ort::Value vad_feats_ort = Ort::Value::CreateTensor<float>(
+    //         memory_info, vad_feats.data(), vad_feats.size(), vad_feats_shape, 3);
+    auto vad_feats_nncase = NRT::_Input<float>(vad_feats_shape, runtime_manager_);
+    auto vad_feats_nncase_buffer = vad_feats_nncase->buffer().as_host().unwrap_or_throw();
+    {
+        auto vad_feats_nncase_mapped = vad_feats_nncase_buffer.map(nncase::runtime::map_write).unwrap_or_throw();
+        auto vad_feats_nncase_ptr = vad_feats_nncase_mapped.buffer().as_span<float>().data();
+        memcpy(vad_feats_nncase_ptr, vad_feats.data(), sizeof(float) * vad_feats.size());
+    }
+    vad_feats_nncase_buffer.sync(nncase::runtime::sync_write_back, true).unwrap_or_throw();
     
     // 3. Put nodes into onnx input vector
-    std::vector<Ort::Value> vad_inputs;
-    vad_inputs.emplace_back(std::move(vad_feats_ort));
+    // std::vector<Ort::Value> vad_inputs;
+    std::vector<nncase::value_t> vad_inputs;
+    // vad_inputs.emplace_back(std::move(vad_feats_ort));
+    vad_inputs.emplace_back(std::move(vad_feats_nncase));
     // 4 caches
     // cache node {batch,128,19,1}
-    const int64_t cache_feats_shape[4] = {1, 128, 19, 1};
+    // const int64_t cache_feats_shape[4] = {1, 128, 19, 1};
+    vector<int32_t> cache_feats_shape = {1, 128, 19, 1};
     for (int i = 0; i < in_cache->size(); i++) {
-      vad_inputs.emplace_back(std::move(Ort::Value::CreateTensor<float>(
-              memory_info, (*in_cache)[i].data(), (*in_cache)[i].size(), cache_feats_shape, 4)));
+    //   vad_inputs.emplace_back(std::move(Ort::Value::CreateTensor<float>(
+    //           memory_info, (*in_cache)[i].data(), (*in_cache)[i].size(), cache_feats_shape, 4)));
+      auto cache_feats_nncase = NRT::_Input<float>(cache_feats_shape, runtime_manager_);
+      auto cache_feats_nncase_buffer = cache_feats_nncase->buffer().as_host().unwrap_or_throw();
+      {
+          auto cache_feats_nncase_mapped = cache_feats_nncase_buffer.map(nncase::runtime::map_write).unwrap_or_throw();
+          auto cache_feats_nncase_ptr = cache_feats_nncase_mapped.buffer().as_span<float>().data();
+          memcpy(cache_feats_nncase_ptr, (*in_cache)[i].data(), sizeof(float) * (*in_cache)[i].size());
+      }
+      cache_feats_nncase_buffer.sync(nncase::runtime::sync_write_back, true).unwrap_or_throw();
+      vad_inputs.emplace_back(std::move(cache_feats_nncase));
     }
   
     // 4. Onnx infer
-    std::vector<Ort::Value> vad_ort_outputs;
-    try {
-        vad_ort_outputs = vad_session_->Run(
-                Ort::RunOptions{nullptr}, vad_in_names_.data(), vad_inputs.data(),
-                vad_inputs.size(), vad_out_names_.data(), vad_out_names_.size());
-    } catch (std::exception const &e) {
-        LOG(ERROR) << "Error when run vad onnx forword: " << (e.what());
-        return;
-    }
+    // std::vector<Ort::Value> vad_ort_outputs;
+    // 4. nncase Infer
+    // std::vector<nncase::value_t> vad_nncase_outputs;
+    // try {
+    //     // vad_nncase_outputs = vad_session_->Run(
+    //     //         Ort::RunOptions{nullptr}, vad_in_names_.data(), vad_inputs.data(),
+    //     //         vad_inputs.size(), vad_out_names_.data(), vad_out_names_.size());
+    //     vad_nncase_outputs = module_->onForward(vad_inputs);
+    // } catch (std::exception const &e) {
+    //     LOG(ERROR) << "Error when run vad nncase forword: " << (e.what());
+    //     return;
+    // }
+    auto vad_nncase_outputs = module_->onForward(vad_inputs);
 
     // 5. Change infer result to output shapes
-    float *logp_data = vad_ort_outputs[0].GetTensorMutableData<float>();
-    auto type_info = vad_ort_outputs[0].GetTensorTypeAndShapeInfo();
-
-    int num_outputs = type_info.GetShape()[1];
-    int output_dim = type_info.GetShape()[2];
-    out_prob->resize(num_outputs);
-    for (int i = 0; i < num_outputs; i++) {
-        (*out_prob)[i].resize(output_dim);
-        memcpy((*out_prob)[i].data(), logp_data + i * output_dim,
-               sizeof(float) * output_dim);
+    auto logp_data_nncase = vad_nncase_outputs->fields()[0].as<nncase::tensor>().unwrap_or_throw();
+    auto logp_data_nncase_buffer = logp_data_nncase->buffer().as_host().unwrap_or_throw();
+    {
+    auto logp_data_nncase_mapped = logp_data_nncase_buffer.map(nncase::runtime::map_read).unwrap_or_throw();
+    auto logp_data = logp_data_nncase_mapped.buffer().as_span<float>().data();
+    memcpy((*out_prob).data(), logp_data, sizeof(float) * (*out_prob).size());
     }
+    logp_data_nncase_buffer.sync(nncase::runtime::sync_write_back, true).unwrap_or_throw();
+
+    // auto logp_data = vad_nncase_outputs[0].GetTensorMutableData<float>();
+    // auto type_info = vad_nncase_outputs->fields()[0].GetTensorTypeAndShapeInfo();
+
+    // int num_outputs = type_info.GetShape()[1];
+    // int output_dim = type_info.GetShape()[2];
+    // out_prob->resize(num_outputs);
+    // for (int i = 0; i < num_outputs; i++) {
+    //     (*out_prob)[i].resize(output_dim);
+    //     memcpy((*out_prob)[i].data(), logp_data + i * output_dim,
+    //            sizeof(float) * output_dim);
+    // }
   
     // get 4 caches outputs,each size is 128*19
     if(!is_final){
         for (int i = 1; i < 5; i++) {
-        float* data = vad_ort_outputs[i].GetTensorMutableData<float>();
-        memcpy((*in_cache)[i-1].data(), data, sizeof(float) * 128*19);
+        // float* data = vad_nncase_outputs[i].GetTensorMutableData<float>();
+        auto cache_data_nncase = vad_nncase_outputs->fields()[i].as<nncase::tensor>().unwrap_or_throw();
+        auto cache_data_nncase_buffer = cache_data_nncase->buffer().as_host().unwrap_or_throw();
+        {
+            auto cache_data_nncase_mapped = cache_data_nncase_buffer.map(nncase::runtime::map_read).unwrap_or_throw();
+            auto data = cache_data_nncase_mapped.buffer().as_span<float>().data();
+            memcpy((*in_cache)[i-1].data(), data, sizeof(float) * 128*19);
+        }
+        cache_data_nncase_buffer.sync(nncase::runtime::sync_write_back, true).unwrap_or_throw();
+        // memcpy((*in_cache)[i-1].data(), data, sizeof(float) * 128*19);       
         }
     }
 }

@@ -40,6 +40,7 @@ using namespace std;
 // mine
 #include <glog/logging.h>
 
+#include "nncasewrapper.h"
 
 #include "common-struct.h"
 #include "com-define.h"

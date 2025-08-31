@@ -3,3 +3,6 @@ logs
 test_funasr
 test_funasr_0
 *.tar.gz
+build_x86_64
+k230_ai_assistant
+.vscode
