@@ -4,6 +4,7 @@
 */
 
 #pragma once 
+#include "precomp.h"
 
 namespace funasr {
 class CTTransformer : public PuncModel {
@@ -23,6 +24,9 @@ private:
 	std::shared_ptr<Ort::Session> m_session;
     Ort::Env env_;
     Ort::SessionOptions session_options;
+	std::shared_ptr<NRT::RuntimeManager> runtime_manager_;
+	std::shared_ptr<NRT::Module> module_;
+
 public:
 
 	CTTransformer();

@@ -48,3 +48,6 @@ qemu-riscv64 ./build/bin/funasr-onnx-offline-vad \
 # ref result: 
 # wav_default_id: [[70,2340],[2620,6200],[6480,23670],[23950,26250],[26780,28990],[29950,31430],[31750,37600],[38210,46900],[47310,49630],[49910,56460],[56740,59540],[59820,70450]]
 
+./build_x86_64/bin/funasr-onnx-offline-punc \
+--model-dir ../test_ltz/ct-transformer/ \
+--txt-path ../test_ltz/ct-transformer/punc_example.txt

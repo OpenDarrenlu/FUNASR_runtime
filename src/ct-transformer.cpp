@@ -12,12 +12,15 @@ CTTransformer::CTTransformer()
 }
 
 void CTTransformer::InitPunc(const std::string &punc_model, const std::string &punc_config, const std::string &token_file, int thread_num){
-    session_options.SetIntraOpNumThreads(thread_num);
-    session_options.SetGraphOptimizationLevel(ORT_ENABLE_ALL);
-    session_options.DisableCpuMemArena();
+    // session_options.SetIntraOpNumThreads(thread_num);
+    // session_options.SetGraphOptimizationLevel(ORT_ENABLE_ALL);
+    // session_options.DisableCpuMemArena();
+    runtime_manager_.reset(new NRT::RuntimeManager());
 
     try{
-        m_session = std::make_unique<Ort::Session>(env_, ORTSTRING(punc_model).c_str(), session_options);
+        // m_session = std::make_unique<Ort::Session>(env_, ORTSTRING(punc_model).c_str(), session_options);
+        std::string model_path(punc_model);
+        module_.reset(new NRT::Module(runtime_manager_, model_path));
         LOG(INFO) << "Successfully load model from " << punc_model;
     }
     catch (std::exception const &e) {
@@ -25,8 +28,8 @@ void CTTransformer::InitPunc(const std::string &punc_model, const std::string &p
         exit(-1);
     }
     // read inputnames outputnames
-    GetInputNames(m_session.get(), m_strInputNames, m_szInputNames);
-    GetOutputNames(m_session.get(), m_strOutputNames, m_szOutputNames);
+    // GetInputNames(m_session.get(), m_strInputNames, m_szInputNames);
+    // GetOutputNames(m_session.get(), m_strOutputNames, m_szOutputNames);
     
 	m_tokenizer.OpenYaml(punc_config.c_str(), token_file.c_str());
     m_tokenizer.JiebaInit(punc_config);
@@ -156,40 +159,79 @@ string CTTransformer::AddPunc(const char* sz_input, std::string language)
 
 vector<int> CTTransformer::Infer(vector<int32_t> input_data)
 {
-    Ort::MemoryInfo m_memoryInfo = Ort::MemoryInfo::CreateCpu(OrtArenaAllocator, OrtMemTypeDefault);
+    // Ort::MemoryInfo m_memoryInfo = Ort::MemoryInfo::CreateCpu(OrtArenaAllocator, OrtMemTypeDefault);
     vector<int> punction;
-    std::array<int64_t, 2> input_shape_{ 1, (int64_t)input_data.size()};
-    Ort::Value onnx_input = Ort::Value::CreateTensor<int32_t>(
-        m_memoryInfo,
-        input_data.data(),
-        input_data.size(),
-        input_shape_.data(),
-        input_shape_.size());
+    // std::array<int64_t, 2> input_shape_{ 1, (int64_t)input_data.size()};
+    vector<int32_t> input_shape_ = { (int32_t)1, (int32_t)input_data.size()};
+    // Ort::Value onnx_input = Ort::Value::CreateTensor<int32_t>(
+    //     m_memoryInfo,
+    //     input_data.data(),
+    //     input_data.size(),
+    //     input_shape_.data(),
+    //     input_shape_.size());
+    auto nncase_input = NRT::_Input<float>(input_shape_, runtime_manager_);
+    auto nncase_input_buffer = nncase_input->buffer().as_host().unwrap_or_throw();
+    {
+        auto nncase_input_mapped = nncase_input_buffer.map(nncase::runtime::map_write).unwrap_or_throw();
+        auto nncase_input_ptr = nncase_input_mapped.buffer().as_span<float>().data();
+        memcpy(nncase_input_ptr, input_data.data(), sizeof(float) * input_data.size());
+    }
+    nncase_input_buffer.sync(nncase::runtime::sync_write_back, true).unwrap_or_throw();
 
-    std::array<int32_t,1> text_lengths{ (int32_t)input_data.size() };
-    std::array<int64_t,1> text_lengths_dim{ 1 };
-    Ort::Value onnx_text_lengths = Ort::Value::CreateTensor(
-        m_memoryInfo,
-        text_lengths.data(),
-        text_lengths.size() * sizeof(int32_t),
-        text_lengths_dim.data(),
-        text_lengths_dim.size(), ONNX_TENSOR_ELEMENT_DATA_TYPE_INT32);
-    std::vector<Ort::Value> input_onnx;
-    input_onnx.emplace_back(std::move(onnx_input));
-    input_onnx.emplace_back(std::move(onnx_text_lengths));
-        
+    // std::array<int32_t,1> text_lengths{ (int32_t)input_data.size() };
+    // std::array<int64_t,1> text_lengths_dim{ 1 };
+    // Ort::Value onnx_text_lengths = Ort::Value::CreateTensor(
+    //     m_memoryInfo,
+    //     text_lengths.data(),
+    //     text_lengths.size() * sizeof(int32_t),
+    //     text_lengths_dim.data(),
+    //     text_lengths_dim.size(), ONNX_TENSOR_ELEMENT_DATA_TYPE_INT32);
+    vector<int32_t> text_lengths = { (int32_t)input_data.size() };
+    vector<int32_t> text_lengths_dim = { 1 };
+    auto nncase_text_lengths = NRT::_Input<float>(text_lengths_dim, runtime_manager_);
+    auto nncase_text_lengths_buffer = nncase_text_lengths->buffer().as_host().unwrap_or_throw();
+    {
+        auto nncase_text_lengths_mapped = nncase_text_lengths_buffer.map(nncase::runtime::map_write).unwrap_or_throw();
+        auto nncase_text_lengths_ptr = nncase_text_lengths_mapped.buffer().as_span<float>().data();
+        memcpy(nncase_text_lengths_ptr, text_lengths.data(), sizeof(float) * text_lengths.size());
+    }
+    nncase_text_lengths_buffer.sync(nncase::runtime::sync_write_back, true).unwrap_or_throw();
+    
+    // std::vector<Ort::Value> input_onnx;
+    // input_onnx.emplace_back(std::move(onnx_input));
+    // input_onnx.emplace_back(std::move(onnx_text_lengths));
+    std::vector<nncase::value_t> input_nncase;
+    input_nncase.emplace_back(std::move(nncase_input));
+    input_nncase.emplace_back(std::move(nncase_text_lengths));
+
     try {
-        auto outputTensor = m_session->Run(Ort::RunOptions{nullptr}, m_szInputNames.data(), input_onnx.data(), m_szInputNames.size(), m_szOutputNames.data(), m_szOutputNames.size());
-        std::vector<int64_t> outputShape = outputTensor[0].GetTensorTypeAndShapeInfo().GetShape();
+        // auto outputTensor = m_session->Run(Ort::RunOptions{nullptr}, m_szInputNames.data(), input_onnx.data(), m_szInputNames.size(), m_szOutputNames.data(), m_szOutputNames.size());
+        // std::vector<int64_t> outputShape = outputTensor[0].GetTensorTypeAndShapeInfo().GetShape();
 
-        int64_t outputCount = std::accumulate(outputShape.begin(), outputShape.end(), 1, std::multiplies<int64_t>());
-        float * floatData = outputTensor[0].GetTensorMutableData<float>();
+        // int64_t outputCount = std::accumulate(outputShape.begin(), outputShape.end(), 1, std::multiplies<int64_t>());
+        // float * floatData = outputTensor[0].GetTensorMutableData<float>();
 
-        for (int i = 0; i < outputCount; i += CANDIDATE_NUM)
+        auto punc_nncase_outputs = module_->onForward(input_nncase);
+        auto result_nncase = punc_nncase_outputs->fields()[0].as<nncase::tensor>().unwrap_or_throw();
+        auto result_nncase_buffer = result_nncase->buffer().as_host().unwrap_or_throw();
         {
-            int index = Argmax(floatData + i, floatData + i + CANDIDATE_NUM-1);
-            punction.push_back(index);
+            auto result_nncase_mapped = result_nncase_buffer.map(nncase::runtime::map_read).unwrap_or_throw();
+            auto result_nncase_ptr = result_nncase_mapped.buffer().as_span<float>().data();
+            int64_t outputCount = result_nncase->length();
+            float * floatData = (float *)result_nncase_ptr;
+            for (int i = 0; i < outputCount; i += CANDIDATE_NUM)
+            {
+                int index = Argmax(floatData + i, floatData + i + CANDIDATE_NUM-1);
+                punction.push_back(index);
+            }
         }
+        result_nncase_buffer.sync(nncase::runtime::sync_write_back, true).unwrap_or_throw();
+
+        // for (int i = 0; i < outputCount; i += CANDIDATE_NUM)
+        // {
+        //     int index = Argmax(floatData + i, floatData + i + CANDIDATE_NUM-1);
+        //     punction.push_back(index);
+        // }
     }
     catch (std::exception const &e)
     {
